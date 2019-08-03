@@ -1,3 +1,23 @@
 .list-group-item {
   line-height: 2.5;
 }
+body {
+  text-align: center;
+}
+form {
+  display: inline-block;
+}
+.form-all {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.form-all {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.justify-center {
+  justify-content: center;
+}
+

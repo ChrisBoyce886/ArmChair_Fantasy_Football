@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fantasy Football Draft - Team Redis</title>
+  
+​
+  <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/eb806b3c30e0754650136bd1f683106530fcf9e6/css/site.css'/>
+  <script src=''></script>
+</head>
+<body>
+  <div class="container">
+    
+​
+<nav class="flex items-center justify-between flex-wrap py-8">
+  <div class="flex items-center flex-no-shrink mr-6">
+    <a href="/" class="text-red-600 font-semibold text-4xl tracking-normal no-underline" title="Fantasy Football Draft">
+      Team<span class="text-gray-800">Redis</span>
+    </a>
+  
+  </ul>
+</nav>
+​
+​
+    <div class="main">
+      
+​
+​
+<div class="bg-texture-red">
+  <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow">Fantasy Football Draft</h1>
+
+</div>
+
+
+  <div class="footer">
+      <div class="container">
+        <div class="py-6">
+            
+            <!-- Timer -->
+      <script type="text/javascript">
+          function countDown(secs,elem) {
+              var element = document.getElementById(elem);
+              element.innerHTML= "select player "+secs+" seconds left";
+              if(secs < 1) {
+                  clearTimeout(timer);
+                  element.innerHTML = '<h2>Time is up!</h2>';
+                  element.innerHTML += '<a href="#">Select next player</a>';
+              }
+              secs--;
+              var timer = setTimeout ('countDown('+secs+', "'+elem+'")',1000);
+          }
+          </script>
+          <div id="status">
+          </div>
+          <script type="text/javascript">countDown(10,"status");</script>
+        ​
+  
+      <span class="text-red-600">
+        
+      </span>
+    </p>
+  </div>
+      </div>
+    </div>
+  
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    .footer {
+       position: fixed;
+       left: 0;
+       bottom: 0;
+       width: 100%;
+       background-color: rgb(211, 35, 35);
+       color: white;
+       text-align: center;
+    }
+    
+    </style>
+  </body>
+  </html>
