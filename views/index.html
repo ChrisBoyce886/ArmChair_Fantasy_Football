@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fantasy Football Draft - Team Redis</title>
+  
+
+  <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/eb806b3c30e0754650136bd1f683106530fcf9e6/css/site.css'/>
+  <link rel="stylesheet" href="/styles/styles.css" media="screen" title="no title" charset="utf-8">
+  <script src=''></script>
+</head>
+<body>
+  <div class="container">
+    
+
+<nav class="flex items-center justify-between flex-wrap py-8">
+  <div class="flex items-center flex-no-shrink mr-6">
+    <a href="/" class="text-red-600 font-semibold text-4xl tracking-normal no-underline" title="Fantasy Football Draft">
+      Team<span class="text-gray-800">Redis</span>
+    </a>
+  
+  </ul>
+</nav>
+
+
+    <div class="main">
+      
+
+
+<div class="bg-texture-red">
+  <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow">Fantasy Football Draft</h1>
+
+  <div class="flex justify-between">
+    <div class="flex px-8">
+      <div class="btn-grp-wrap">
+        <ul kendo-button-group="" id="bg_subscope" data-role="buttongroup" class="k-widget k-button-group" role="group" tabindex="0">
+                <li class="k-button k-state-active" onclick="clickChild(this)" aria-pressed="true" role="button">
+                    <a class="btn-grp-url" href="/nfl/ppr-fantasy-football-rankings">All</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/ppr-qb-rankings">QB</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/ppr-rb-rankings">RB</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/ppr-wr-rankings">WR</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/ppr-te-rankings">TE</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/k-rankings">K</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/dst-rankings">DST</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/idp-rankings">IDP</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/dl-rankings">DL</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/db-rankings">DB</a>
+                </li>
+                <li class="k-button" onclick="clickChild(this)" aria-pressed="false" role="button">
+                    <a class="btn-grp-url" href="/nfl/lb-rankings">LB</a>
+                </li>
+        </ul>
+    </div>
+      
+    </div>
+  </div>
+</div>
+
+<div class="data-container flex">
+  <table id="airyards-table" class="w-full rounded-lg" data-sortable>
+    <thead>
+      <tr class="text-xs text-white rounded-lg subpixel-antialiased cursor-pointer">
+        <th data-sortable="false" class="data-header cursor-auto rounded-tl-lg"></th>
+        <th class="text-left data-header">Player</th>
+        <th class="data-header">Team Name</th>
+        <th class="data-header">Position</th>
+        <th class="data-header">Stats</th>
+        <th class="data-header">Stats</th>
+        <th class="data-header">Stats</th>
+        <th class="data-header">Stats</th>
+        <th class="data-header">Stats</th>
+        <th class="data-header">Stats</th>
+        
+        </th>
+      </tr>
+    </thead>
+    <tbody class="striped">
+      
+
+
+  <tr class="hover:bg-blue-light">
+    
+    
+    
+    
+
+   
+
+
+    </tbody>
+  </table>
+</div>
+
+
+
+    </div>
+  </div>
+  <div class="footer">
+    <div class="container">
+      <div class="py-6">
+  <p class="pb-10">
+    1:00</a>
+    <span class="text-red-600">
+      
+    </span>
+  </p>
+</div>
+    </div>
+  </div>
+
+  <script>
+    tippy('.tooltip')
+  </script>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+  .footer {
+     position: fixed;
+     left: 0;
+     bottom: 0;
+     width: 100%;
+     background-color: red;
+     color: white;
+     text-align: center;
+  }
+  </style>
+</body>
+</html>
