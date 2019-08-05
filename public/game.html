@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fantasy Football Draft - Team Redis</title>
+  
+
+  <!-- <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/eb806b3c30e0754650136bd1f683106530fcf9e6/css/site.css'/> -->
+  <link rel="stylesheet" href="assets/css/site.css">
+  <link rel="stylesheet" href="assets/css/flipclock.css">
+
+</head>
+<body>
+  <div class="container">
+    
+
+<nav class="flex items-center justify-between flex-wrap py-8">
+  <div class="flex items-center flex-no-shrink mr-6">
+    <a href="/" class="text-red-600 font-semibold text-4xl tracking-normal no-underline" title="Fantasy Football Draft">
+      Team<span class="text-gray-800">Redis</span>
+    </a>
+  
+  </ul>
+</nav>
+
+
+
+    <div class="main">
+      
+
+
+      <div class="bg-texture-red">
+        <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow">Fantasy Football Draft</h1>
+      
+        <div class="round-data">
+          <div class="px-8">
+            <div class="btn-grp-wrap">
+              <ul kendo-button-group="" id="bg_subscope" data-role="buttongroup" class="k-widget k-button-group flex" role="group" tabindex="0">
+                  <li><a href="#">QB</a></li>
+                  <li><a href="#">RB</a></li>
+                  <li><a href="#">WR</a></li>
+                  <li><a href="#">WR2</a></li>
+                  <li><a href="#">TE</a></li>
+                  <li><a href="#">K</a></li>
+                  <li><a href="#">DEFENSE</a></li>
+              </ul>
+          </div>
+            
+          </div>
+        </div>
+      </div>
+      
+      <div class="data-container flex">
+        <table id="airyards-table" class="w-full rounded-lg" data-sortable>
+          <thead>
+            <tr class="text-xs text-white rounded-lg subpixel-antialiased cursor-pointer">
+              <th data-sortable="false" class="data-header cursor-auto rounded-tl-lg"></th>
+              <th class="text-left data-header">Player</th>
+              <th class="data-header">Team Name</th>
+              <th class="data-header">Position</th>
+              <th class="data-header">STATS</th>
+              <th class="data-header">STATS</th>
+              <th class="data-header">STATS</th>
+              <th class="data-header">STATS</th>
+              <th class="data-header">STATS</th>
+              <th class="data-header rounded-tr-lg">STATS</th>
+              
+              </th>
+            </tr>
+          </thead>
+          <tbody class="striped">
+            
+      
+      
+        <tr class="hover:bg-blue-light">
+  
+
+                <td class="cursor-pointer select-none">
+                  
+                </td>
+                <td class="text-left">
+                
+                </td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+              </tr>
+            
+              <tr class="hover:bg-blue-light">
+                
+                
+                
+                
+            
+                <td class="cursor-pointer select-none">
+                </td>
+                <td class="text-left">
+                  
+                </td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+              </tr>
+              <td class="cursor-pointer select-none">
+                  
+                </td>
+                <td class="text-left" data-value="Walker">
+                
+                </td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+              </tr>
+            
+              <tr class="hover:bg-blue-light">
+                
+                
+                
+                
+            
+                <td class="cursor-pointer select-none">
+                </td>
+                <td class="text-left">
+                  
+                </td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+                <td class="text-center"></td>
+              </tr>
+            
+              <tr class="hover:bg-blue-light">
+                  <td class="cursor-pointer select-none">
+                    </td>
+                    <td class="text-left">
+                      
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                  </tr>
+                  <td class="cursor-pointer select-none">
+                      
+                    </td>
+                    <td class="text-left" data-value="Walker">
+                    
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                  </tr>
+                
+                  <tr class="hover:bg-blue-light">
+                    
+                    
+                    
+                    
+                
+                    <td class="cursor-pointer select-none">
+                    </td>
+                    <td class="text-left">
+                      
+                    </td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                    <td class="text-center"></td>
+                  </tr>
+                
+                  <tr class="hover:bg-blue-light">
+
+                      <td class="cursor-pointer select-none">
+                        </td>
+                        <td class="text-left">
+                          
+                        </td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                      <td class="cursor-pointer select-none">
+                          
+                        </td>
+                        <td class="text-left" data-value="Walker">
+                        
+                        </td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                    
+                      <tr class="hover:bg-blue-light">
+                        
+                        
+                        
+                        
+                    
+                        <td class="cursor-pointer select-none">
+                        </td>
+                        <td class="text-left">
+                          
+                        </td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                        <td class="text-center"></td>
+                      </tr>
+                    
+                      <tr class="hover:bg-blue-light">
+                          <td class="cursor-pointer select-none">
+                            </td>
+                            <td class="text-left">
+                              
+                            </td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                          </tr>
+                          <td class="cursor-pointer select-none">
+                              
+                            </td>
+                            <td class="text-left" data-value="Walker">
+                            
+                            </td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                          </tr>
+                        
+                          <tr class="hover:bg-blue-light">
+                            
+                            
+                            
+                            
+                        
+                            <td class="cursor-pointer select-none">
+                            </td>
+                            <td class="text-left">
+                              
+                            </td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                            <td class="text-center"></td>
+                          </tr>
+                        
+                          <tr class="hover:bg-blue-light">
+          
+          
+          
+          
+      
+         
+      
+      
+          </tbody>
+        </table>
+      </div>
+      
+      
+      
+          </div>
+        </div>
+        <div class="footer">
+          <div class="timer-clock"></div>
+        </div>
+      
+        
+        
+        <style>
+        .footer {
+           position: fixed;
+           right: 0;
+           bottom: 0;
+        }
+        </style>
+
+      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <script src="assets/js/flipclock.min.js"></script>
+
+      <script>
+      var clock = $('.timer-clock').FlipClock(60, {
+        countdown: true,
+        clockFace: 'MinuteCounter'
+      });
+      </script>
+
+      <!-- ToolTip -->
+      <script>
+        tippy('.tooltip')
+      </script>
+      </body>
+      </html>
+      
