@@ -1,15 +1,17 @@
 {
   "development": {
     "username": "root",
-    "password": null,
-    "database": "exampledb",
+    "password": "password",
+    "database": "fantasyStats",
+    "port": 3306,
     "host": "localhost",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
-    "password": null,
-    "database": "testdb",
+    "password": "password",
+    "database": "fantasyStats",
+    "port": 3306,
     "host": "localhost",
     "dialect": "mysql",
     "logging": false
