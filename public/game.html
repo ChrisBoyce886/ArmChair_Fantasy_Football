@@ -37,13 +37,13 @@
           <div class="px-8">
             <div class="btn-grp-wrap">
               <ul kendo-button-group="" id="bg_subscope" data-role="buttongroup" class="k-widget k-button-group flex" role="group" tabindex="0">
-                  <li><a href="#">QB</a></li>
-                  <li><a href="#">RB</a></li>
-                  <li><a href="#">WR</a></li>
-                  <li><a href="#">WR2</a></li>
-                  <li><a href="#">TE</a></li>
-                  <li><a href="#">K</a></li>
-                  <li><a href="#">DEFENSE</a></li>
+                  <li id="qb-btn"><a href="#">QB</a></li>
+                  <li id="rb-btn"><a href="#">RB</a></li>
+                  <li id="wr-btn"><a href="#">WR</a></li>
+                  <li id="wr2-btn"><a href="#">WR2</a></li>
+                  <li id="te-btn"><a href="#">TE</a></li>
+                  <li id="k-btn"><a href="#">K</a></li>
+                  <li id="def-btn"><a href="#">DEFENSE</a></li>
               </ul>
           </div>
             
@@ -69,7 +69,7 @@
               </th>
             </tr>
           </thead>
-          <tbody class="striped">
+          <tbody id="player-list" class="striped">
             
       
       
@@ -336,9 +336,13 @@
            bottom: 0;
         }
         </style>
-
+        
+      <!-- JQuery script -->
       <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+      <!-- Flipclock script -->
       <script src="js/flipclock.min.js"></script>
+      <!-- Index script -->
+      <script src="js/index.js"></script>
 
       <script>
       var clock = $('.timer-clock').FlipClock(60, {

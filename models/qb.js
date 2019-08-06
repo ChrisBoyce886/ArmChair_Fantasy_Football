@@ -1,5 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
-  var Players = sequelize.define("players", {
+  var QB = sequelize.define("QB", {
     rank: DataTypes.INTEGER,
     name: DataTypes.STRING,
     team: DataTypes.STRING,
@@ -9,5 +9,5 @@ module.exports = function(sequelize, DataTypes) {
     interceptions: DataTypes.INTEGER,
     comp: DataTypes.DECIMAL
   });
-  return Players;
+  return QB;
 };

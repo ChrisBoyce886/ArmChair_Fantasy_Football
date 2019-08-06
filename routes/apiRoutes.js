@@ -1,30 +1,52 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/players", function(req, res) {
-    db.Players.findAll({}).then(function(dbPlayers) {
-      res.json(dbPlayers);
+  // Get all QBs
+  app.get("/api/qb", function(req, res) {
+    db.QB.findAll({}).then(function(results) {
+      res.json(results);
     });
   });
 
-  app.get("/api/players/:position", function(req, res) {
-    db.Players.findAll({}).then(function(dbPlayers) {
-      res.json(dbPlayers);
+  // Get all RBs
+  app.get("/api/rb", function(req, res) {
+    db.RB.findAll({}).then(function(results) {
+      res.json(results);
     });
   });
 
-  // Create a new example
-  app.post("/api/players", function(req, res) {
-    db.Players.create(req.body).then(function(dbPlayers) {
-      res.json(dbPlayers);
+  // Get all WRs
+  app.get("/api/wr", function(req, res) {
+    db.WR.findAll({}).then(function(results) {
+      res.json(results);
     });
   });
 
-  // Delete an example by id
-  app.delete("/api/players/:id", function(req, res) {
-    db.Players.destroy({ where: { id: req.params.id } }).then(function(dbPlayers) {
-      res.json(dbPlayers);
+  // Get all WR2s
+  app.get("/api/wr2", function(req, res) {
+    db.WR2.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // Get all TEs
+  app.get("/api/te", function(req, res) {
+    db.TE.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // Get all Ks
+  app.get("/api/k", function(req, res) {
+    db.K.findAll({}).then(function(results) {
+      res.json(results);
+    });
+  });
+
+  // Get all DSTs
+  app.get("/api/dst", function(req, res) {
+    db.DST.findAll({}).then(function(results) {
+      res.json(results);
     });
   });
 };
