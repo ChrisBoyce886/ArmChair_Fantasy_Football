@@ -15,9 +15,10 @@ body {
   font-size: 16px
 }
 
+
 #mainHeader {
   text-align: center;
-  padding-top: 3.5%
+  padding-top: 1.5%
 }
 
  .btn-grp-wrap{    
@@ -28,12 +29,27 @@ body {
 #start-btn {
   text-align: center !important;
   color: white;
-  background-color: rgb(53, 184, 53)
+  background-color: rgb(53, 184, 53);
+}
+
+#viewRoster {
+  text-align: center
+ 
 }
 
 #airyards-table{
   width: 125%;
   margin:2.4% -2.5% 0% -2.5%;
+}
+
+#tableContainer{
+  padding: 0px !important;
+}
+
+#currentRoster {
+text-align: center;
+color: white;
+background-color: #E54A4F
 }
 
 .choices:focus {
