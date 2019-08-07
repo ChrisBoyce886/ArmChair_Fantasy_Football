@@ -53,6 +53,11 @@
         <button type="button" class="btn btn-outline-dark text-center" id="viewRoster2">View Your Roster</button>
         </div>
       </div>
+
+      
+      <div id="put-table-here" class="data-container flex">
+        <!-- put table here for real-->
+
      
   
       <div class="data-container flex" id="tableContainer">       
@@ -460,6 +465,7 @@
           
           </tbody>
         </table>
+
       </div>
       
       
@@ -488,6 +494,18 @@
       <script src="js/index.js"></script>
 
       <script>
+
+      var clock = $('.timer-clock').FlipClock(60, {
+        countdown: false,
+        clockFace: 'MinuteCounter'
+      });
+      </script>
+
+      <!-- ToolTip -->
+      <script>
+        //tippy('.tooltip')
+      </script>
+
  
       $("#start-btn").click(function (){  
           var clock = $('.timer-clock').FlipClock(240, {
@@ -513,6 +531,7 @@ $('#viewRoster2').click(function(){
       <!-- // <script>
       //   tippy('.tooltip')
       // </script> -->
+
       </body>
       </html>
       
