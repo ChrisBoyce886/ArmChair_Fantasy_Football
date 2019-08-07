@@ -26,9 +26,9 @@ var API = {
       data: JSON.stringify(example)
     });
   },
-  getPlayers: function() {
+  getTable: function() {
     return $.ajax({
-      url: "api/qb",
+      url: "extra/table/QB",
       type: "GET"
     });
   },
@@ -43,31 +43,47 @@ var API = {
 // refreshExamples gets new examples from the db and repopulates the list
 var refreshPlayers = function() {
   console.log("refreshing players");
-  API.getPlayers().then(function(data) {
-    console.log(data);
-    var $players = data.map(function(player) {
-      var $a = $("<a>")
-        .text(player.text)
-        .attr("href", "/example/" + player.id);
+  API.getTable().then(function(data) {
+    $("#put-table-here").html(data);
+    // for (var i = 0; i < data.length; i++) {
+    //   var $tr = $("<tr>");
+    //   var player = data[i];
+    //   var records = ["noexist", "name", "team", "position", "comp", "yards", "touchdowns", "a", "b", "c"];
 
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": player.id
-        })
-        .append($a);
+    //   records.forEach(function(record) {
+    //     var value = player[record] || "";
+    //     var $td = $("<td>").html(value);
+    //     $tr.append($td);
+    //   });
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+    //   $("tbody").append($tr);
+    // }
 
-      $li.append($button);
+    // var $td = $("<td>");
 
-      return $li;
-    });
+    // var $players = data.map(function() {
+    //   var $a = $("<a>")
+    //     .text(player.text)
+    //     .attr("href", "/example/" + player.id);
 
-    $playerList.empty();
-    $playerList.append($players);
+    //   var $li = $("<li>")
+    //     .attr({
+    //       class: "list-group-item",
+    //       "data-id": player.id
+    //     })
+    //     .append($a);
+
+    //   var $button = $("<button>")
+    //     .addClass("btn btn-danger float-right delete")
+    //     .text("ｘ");
+
+    //   $li.append($button);
+
+    //   return $li;
+    // });
+
+    // $playerList.empty();
+    // $playerList.append(result);
   });
 };
 

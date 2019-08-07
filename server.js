@@ -8,7 +8,7 @@ var exphbs = require("express-handlebars");
 
 var db = require("./models");
 
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 8080;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -78,16 +78,16 @@ io.sockets.on("connection", function(socket) {
   });
 });
 
-var syncOptions = { force: true };
+// var syncOptions = { force: true };
 
-// If running a test, set syncOptions.force to true
-// clearing the `testdb`
-if (process.env.NODE_ENV === "test") {
-  syncOptions.force = true;
-}
+// // If running a test, set syncOptions.force to true
+// // clearing the `testdb`
+// if (process.env.NODE_ENV === "test") {
+//   syncOptions.force = true;
+// }
 
 // Starting the server, syncing our models ------------------------------------/
-db.sequelize.sync(syncOptions).then(function() {
+db.sequelize.sync().then(function() {
   http.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",

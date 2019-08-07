@@ -1,0 +1,24 @@
+<table dataid = "players-list" id="airyards-table" class="w-full rounded-lg" data-sortable>
+  <thead>
+    <tr class="text-xs text-white rounded-lg subpixel-antialiased cursor-pointer">
+      <th class="text-left data-header">Player</th>
+      <th class="data-header">Team Name</th>
+      <th class="data-header">Position</th>
+      <th class="data-header">{{stat1}}</th>
+      <th class="data-header">{{stat2}}</th>
+      <th class="data-header">{{stat3}}</th>
+    </tr>
+  </thead>
+  <tbody class="striped">
+    {{#each players}}
+      <tr>
+        <td class="text-left">{{this.name}}</td>
+        <td class="text-center">{{this.team}}</td>
+        <td class="text-center">{{this.position}}</td>
+        <td class="text-center">{{this.comp}}</td>
+        <td class="text-center">{{this.yard}}</td>
+        <td class="text-center">{{this.touchdowns}}</td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

@@ -4,6 +4,7 @@ module.exports = function(app) {
   // Get all QBs
   app.get("/api/qb", function(req, res) {
     db.QB.findAll({}).then(function(results) {
+      console.log(results);
       res.json(results);
     });
   });
