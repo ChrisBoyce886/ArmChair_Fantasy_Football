@@ -1,107 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fantasy Football Draft - Team Redis</title>
-  
-
-  <!-- <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/eb806b3c30e0754650136bd1f683106530fcf9e6/css/site.css'/> -->
-  <link rel="stylesheet" href="styles/styles.css">
-  <link rel="stylesheet" href="styles/flipclock.css">
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+ <title>Fantasy Football Draft - Team Redis</title>
+ <!-- <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/eb806b3c30e0754650136bd1f683106530fcf9e6/css/site.css'/> -->
+ <link rel="stylesheet" href="styles/styles.css">
+ <link rel="stylesheet" href="styles/flipclock.css">
 </head>
 <body>
-  <div class="container">
-    
-
-<nav class="flex items-center justify-between flex-wrap py-8">
-  <div class="flex items-center flex-no-shrink mr-6">
-    <a href="/" class="text-red-600 font-semibold text-4xl tracking-normal no-underline" title="Fantasy Football Draft">
-      Team<span class="text-gray-800">Redis</span>
-    </a>
-  
-  </ul>
-</nav>
-
-
-    <div class="main">
-      
-
-
+ <div class="container">
+<!-- <nav class="flex items-center justify-between flex-wrap py-8">
+ <div class="flex items-center flex-no-shrink mr-6">
+   <a href="/" class="text-red-600 font-semibold text-4xl tracking-normal no-underline" title="Fantasy Football Draft">
+     Team<span class="text-gray-800">Redis</span>
+   </a>
+ </ul>
+</nav> -->
+   <div class="main">
 <div class="bg-texture-red">
-  <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow">Game Over!</h1>
-
+ <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow text-center" id="mainHeader">Game Over!</h1>
 </div>
-
 <div class="winner-notice text-center">
-  <h2 class="text-4xl font-bold">The winner name</h2>
-  <span>Won the draft!</span>
-  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean fringilla mauris quam, vitae rutrum mauris dapibus non. Curabitur bibendum erat volutpat laoreet vestibulum. Nunc lacinia pretium quam, a bibendum augue. Aliquam in sodales augue. Mauris lobortis elit luctus justo ultricies</p>
+ <h2 class="text-4xl font-bold">"The winner name"</h2>
+ <span><h2 class="text-4x1 font-bold"> Won the draft!</h2></span>
 </div>
-
 <div class="game-table">
-  <table class="w-full text-center">
-    <thead>
-      <tr>
-        <th class="rounded-tl-lg">Player Name</th>
-        <th class="rounded-tr-lg">Player Name</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Name of the player</td>
-        <td>Name of the player</td>
-      </tr>
-      <tr>
-        <td>Name of the player</td>
-        <td>Name of the player</td>
-      </tr>
-      <tr>
-        <td>Name of the player</td>
-        <td>Name of the player</td>
-      </tr>
-      <tr>
-        <td>Name of the player</td>
-        <td>Name of the player</td>
-      </tr>
-      <tr>
-        <td>Name of the player</td>
-        <td>Name of the player</td>
-      </tr>
-      <tr>
-        <td>Name of the player</td>
-        <td>Name of the player</td>
-      </tr>
-      <tr>
-        <td>Name of the player</td>
-        <td>Name of the player</td>
-      </tr>
-    </tbody>
-  </table>
+ <table class="w-full text-center">
+   <thead>
+     <tr>
+       <th class="rounded-tl-lg">Player Name</th>
+       <th class="rounded-tr-lg">Player Name</th>
+     </tr>
+   </thead>
+   <tbody>
+     <tr>
+       <td>Name of the player</td>
+       <td>Name of the player</td>
+     </tr>
+     <tr>
+       <td>Name of the player</td>
+       <td>Name of the player</td>
+     </tr>
+     <tr>
+       <td>Name of the player</td>
+       <td>Name of the player</td>
+     </tr>
+     <tr>
+       <td>Name of the player</td>
+       <td>Name of the player</td>
+     </tr>
+     <tr>
+       <td>Name of the player</td>
+       <td>Name of the player</td>
+     </tr>
+     <tr>
+       <td>Name of the player</td>
+       <td>Name of the player</td>
+     </tr>
+     <tr>
+       <td>Name of the player</td>
+       <td>Name of the player</td>
+     </tr>
+   </tbody>
+ </table>
 </div>
-
-  <style>
-    .footer {
-       position: fixed;
-       right: 0;
-       bottom: 0;
-    }
-    </style>
-
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <script src="js/flipclock.min.js"></script>
-
-  <script>
-  var clock = $('.timer-clock').FlipClock(60, {
-    countdown: true,
-    clockFace: 'MinuteCounter'
-  });
-  </script>
-
-  <!-- ToolTip -->
-  <script>
-    tippy('.tooltip')
-  </script>
-  </body>
-  </html>
-  
+ <style>
+   .footer {
+      position: fixed;
+      right: 0;
+      bottom: 0;
+   }
+   </style>
+ <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+ <script src="js/flipclock.min.js"></script>
+ 
+ </body>
+ </html>
