@@ -8,7 +8,7 @@ var exphbs = require("express-handlebars");
 
 var db = require("./models");
 
-var PORT = process.env.PORT || 8080;
+var PORT = process.env.PORT || 3000;
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
