@@ -15,6 +15,16 @@ body {
   font-size: 16px
 }
 
+#mainHeader {
+  text-align: center;
+  padding-top: 3.5%
+}
+
+ .btn-grp-wrap{    
+  display: flex; justify-content: center; 
+}
+
+
 #start-btn {
   text-align: center !important;
   color: white;

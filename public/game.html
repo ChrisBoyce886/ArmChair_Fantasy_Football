@@ -31,8 +31,8 @@
 
 
       <div class="bg-texture-red">
-        <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow">Fantasy Football Draft</h1>
-      <button type="button" class="btn btn-secondary btn-lg btn-block" id="start-btn">Start Game</button>
+        <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow" id="mainHeader">Dope Ass Fantasy Football Draft</h1>
+      <button type="button" class="btn btn-secondary btn-lg btn-block" id="start-btn">Click Here To Start Draft</button>
         <div class="round-data">
           <div class="px-8">
             <div class="btn-grp-wrap">
@@ -345,16 +345,20 @@
       <script src="js/index.js"></script>
 
       <script>
-      var clock = $('.timer-clock').FlipClock(60, {
-        countdown: true,
-        clockFace: 'MinuteCounter'
-      });
+ 
+      $("#start-btn").click(function (){  
+          var clock = $('.timer-clock').FlipClock(60, {
+            countdown: true,
+            clockFace: 'MinuteCounter'
+      })
+          $("#start-btn").hide()
+      })
       </script>
 
       <!-- ToolTip -->
-      <script>
-        tippy('.tooltip')
-      </script>
+      <!-- // <script>
+      //   tippy('.tooltip')
+      // </script> -->
       </body>
       </html>
       
