@@ -1,12 +1,29 @@
 body {
   background-image: url("../pictures/field-background.jpg");
-  background-size:cover
+  background-size: cover;
+}
+
+.main {
+  margin-top: 3%;
+  width:110%;
+  margin-left: -5%
 }
 
 .choices {
   position: relative;
   margin-bottom: 24px;
   font-size: 16px
+}
+
+#start-btn {
+  text-align: center !important;
+  color: white;
+  background-color: rgb(53, 184, 53)
+}
+
+#airyards-table{
+  width: 125%;
+  margin:2.4% -2.5% 0% -2.5%;
 }
 
 .choices:focus {

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Fantasy Football Draft - Team Redis</title>
   
-
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/eb806b3c30e0754650136bd1f683106530fcf9e6/css/site.css'/> -->
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/flipclock.css">
@@ -22,7 +22,7 @@
     </a>
   
   </ul> -->
-</nav>
+<!-- </nav> -->
 
 
 
@@ -32,7 +32,7 @@
 
       <div class="bg-texture-red">
         <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow">Fantasy Football Draft</h1>
-      
+      <button type="button" class="btn btn-secondary btn-lg btn-block" id="start-btn">Start Game</button>
         <div class="round-data">
           <div class="px-8">
             <div class="btn-grp-wrap">
@@ -43,15 +43,15 @@
                   <li id="wr2-btn"><a href="#">WR2</a></li>
                   <li id="te-btn"><a href="#">TE</a></li>
                   <li id="k-btn"><a href="#">K</a></li>
-                  <li id="def-btn"><a href="#">DEFENSE</a></li>
-              </ul>
-          </div>
-            
-          </div>
-        </div>
+                  <li id="def-btn"><a href="#">DEFENSE</a></li>             
+              </ul>                
+            </div>        
+          </div>               
+        </div> 
       </div>
-      
-      <div class="data-container flex">
+     
+  
+      <div class="data-container flex">       
         <table id="airyards-table" class="w-full rounded-lg" data-sortable>
           <thead>
             <tr class="text-xs text-white rounded-lg subpixel-antialiased cursor-pointer">
