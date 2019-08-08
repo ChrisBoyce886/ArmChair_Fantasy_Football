@@ -83,6 +83,12 @@ module.exports = function(app) {
     });
   });
 
+  // // Get player rank
+  // app.get("/players/table/:position/:rank", function(req, res) {
+  //   var position = req.params.position.toUpperCase(); // QB // RB // WR // TE // K // DST
+  //   db[position].findOne({ Where: { rank: req.body.position.rank } } ).then(function(results) {
+  // })
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

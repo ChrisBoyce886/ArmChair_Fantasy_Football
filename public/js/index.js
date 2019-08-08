@@ -14,15 +14,17 @@ var getQBs = function() {
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
-var getRBs = function() {
+var getRBs = function() { 
   return $.ajax({
     url: "players/table/rb",
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
@@ -32,6 +34,7 @@ var getWRs = function() {
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
@@ -41,6 +44,7 @@ var getWR2s = function() {
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
@@ -50,6 +54,7 @@ var getTEs = function() {
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
@@ -59,6 +64,7 @@ var getKs = function() {
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
@@ -68,6 +74,7 @@ var getDEF = function() {
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
@@ -79,3 +86,41 @@ $wr2Btn.on("click", getWR2s);
 $teBtn.on("click", getTEs);
 $kBtn.on("click", getKs);
 $defBtn.on("click", getDEF);
+
+// Add players to user's team
+
+function attachBtnHandler() {
+  var $addBtnList = $(".add-btn");
+  console.log($addBtnList);
+  $addBtnList.on("click", function(event) {
+    event.preventDefault();
+
+    var playerInfo = event.currentTarget.dataset;
+
+    console.log(playerInfo);
+
+    console.log("add button clicked");
+
+    $("#roster").append(
+      "<tr><td>" +
+        playerInfo.name +
+        "</td><td>" +
+        playerInfo.team +
+        "</td><td>" +
+        playerInfo.position +
+        "</td><td>" +
+        playerInfo.yards +
+        "</td><td>" +
+        playerInfo.touchdowns +
+        "</td><td>" +
+        playerInfo.interceptions +
+        "</td><td>" +
+        playerInfo.comp +
+        "</td><td>" +
+        playerInfo.rushingYards +
+        "</td><td>" +
+        playerInfo.rushingTouchdowns +
+        "</td>"
+    );
+  });
+}
