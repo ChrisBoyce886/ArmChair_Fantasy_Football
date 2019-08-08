@@ -12,80 +12,143 @@ var $teBtn = $("#te-btn");
 var $kBtn = $("#k-btn");
 var $defBtn = $("#def-btn");
 
-var $playerList = $("player-list");
+// var $playerList = $("player-list");
 
 // The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getTable: function() {
-    return $.ajax({
-      url: "players/table/qb",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
+// var API = {
+//   saveExample: function(example) {
+//     return $.ajax({
+//       headers: {
+//         "Content-Type": "application/json"
+//       },
+//       type: "POST",
+//       url: "api/examples",
+//       data: JSON.stringify(example)
+//     });
+//   },
+//   getTable: function(position) {
+//     return $.ajax({
+//       url: "players/table/" + position,
+//       type: "GET"
+//     });
+//   },
+//   deleteExample: function(id) {
+//     return $.ajax({
+//       url: "api/examples/" + id,
+//       type: "DELETE"
+//     });
+//   }
+// };
+
+var getQBs = function() {
+  return $.ajax({
+    url: "players/table/qb",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+  });
+};
+
+var getRBs = function() {
+  return $.ajax({
+    url: "players/table/rb",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+  });
+};
+
+var getWRs = function() {
+  return $.ajax({
+    url: "players/table/wr",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+  });
+};
+
+var getWR2s = function() {
+  return $.ajax({
+    url: "players/table/wr2",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+  });
+};
+
+var getTEs = function() {
+  return $.ajax({
+    url: "players/table/te",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+  });
+};
+
+var getKs = function() {
+  return $.ajax({
+    url: "players/table/k",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+  });
+};
+
+var getDEF = function() {
+  return $.ajax({
+    url: "players/table/dst",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+  });
 };
 
 // refreshExamples gets new examples from the db and repopulates the list
-var refreshPlayers = function() {
-  console.log("refreshing players");
-  API.getTable().then(function(data) {
-    $("#put-table-here").html(data);
-    // for (var i = 0; i < data.length; i++) {
-    //   var $tr = $("<tr>");
-    //   var player = data[i];
-    //   var records = ["noexist", "name", "team", "position", "comp", "yards", "touchdowns", "a", "b", "c"];
+// var refreshPlayers = function() {
+//   console.log("refreshing players");
+//   getTable().then(function(data) {
+//     $("#tableContainer").html(data);
+// for (var i = 0; i < data.length; i++) {
+//   var $tr = $("<tr>");
+//   var player = data[i];
+//   var records = ["noexist", "name", "team", "position", "comp", "yards", "touchdowns", "a", "b", "c"];
 
-    //   records.forEach(function(record) {
-    //     var value = player[record] || "";
-    //     var $td = $("<td>").html(value);
-    //     $tr.append($td);
-    //   });
+//   records.forEach(function(record) {
+//     var value = player[record] || "";
+//     var $td = $("<td>").html(value);
+//     $tr.append($td);
+//   });
 
-    //   $("tbody").append($tr);
-    // }
+//   $("tbody").append($tr);
+// }
 
-    // var $td = $("<td>");
+// var $td = $("<td>");
 
-    // var $players = data.map(function() {
-    //   var $a = $("<a>")
-    //     .text(player.text)
-    //     .attr("href", "/example/" + player.id);
+// var $players = data.map(function() {
+//   var $a = $("<a>")
+//     .text(player.text)
+//     .attr("href", "/example/" + player.id);
 
-    //   var $li = $("<li>")
-    //     .attr({
-    //       class: "list-group-item",
-    //       "data-id": player.id
-    //     })
-    //     .append($a);
+//   var $li = $("<li>")
+//     .attr({
+//       class: "list-group-item",
+//       "data-id": player.id
+//     })
+//     .append($a);
 
-    //   var $button = $("<button>")
-    //     .addClass("btn btn-danger float-right delete")
-    //     .text("ｘ");
+//   var $button = $("<button>")
+//     .addClass("btn btn-danger float-right delete")
+//     .text("ｘ");
 
-    //   $li.append($button);
+//   $li.append($button);
 
-    //   return $li;
-    // });
+//   return $li;
+// });
 
-    // $playerList.empty();
-    // $playerList.append(result);
-  });
-};
+// $playerList.empty();
+// $playerList.append(result);
+//   });
+// };
 
 // handleFormSubmit is called whenever we submit a new example
 // Save the new example to the db and refresh the list
@@ -126,10 +189,10 @@ var refreshPlayers = function() {
 // $submitBtn.on("click", handleFormSubmit);
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
-$qbBtn.on("click", refreshPlayers);
-$rbBtn.on("click", refreshPlayers);
-$wrBtn.on("click", refreshPlayers);
-$wr2Btn.on("click", refreshPlayers);
-$teBtn.on("click", refreshPlayers);
-$kBtn.on("click", refreshPlayers);
-$defBtn.on("click", refreshPlayers);
+$qbBtn.on("click", getQBs);
+$rbBtn.on("click", getRBs);
+$wrBtn.on("click", getWRs);
+$wr2Btn.on("click", getWR2s);
+$teBtn.on("click", getTEs);
+$kBtn.on("click", getKs);
+$defBtn.on("click", getDEF);

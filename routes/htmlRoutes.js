@@ -25,11 +25,19 @@ var playerMap = {
     stat5: "Receptions Per Game",
     stat6: "Receiving Yards Per Game"
   },
+  WR2: {
+    stat1: "Receptions",
+    stat2: "Receiving Yards",
+    stat3: "Receiving Touchdowns",
+    stat4: "Yards Per Reception",
+    stat5: "Receptions Per Game",
+    stat6: "Receiving Yards Per Game"
+  },
   TE: {
     stat1: "Receptions",
     stat2: "Receiving Yards",
     stat3: "Receiving Touchdowns",
-    stat4: "Yards Per Receptions",
+    stat4: "Yards Per Reception",
     stat5: "Receptions Per Game",
     stat6: "Receiving Yards Per Game"
   },
@@ -40,6 +48,14 @@ var playerMap = {
     stat4: "Extra Point Attempts",
     stat5: "Extra Points Made",
     stat6: "Extra Points Percentage"
+  },
+  DST: {
+    stat1: "Tackles",
+    stat2: "Sacks",
+    stat3: "Interceptions",
+    stat4: "Interception TDs",
+    stat5: "Forced Fumbles",
+    stat6: "FF Touchdowns"
   }
 };
 
@@ -54,7 +70,7 @@ module.exports = function(app) {
     var position = req.params.position.toUpperCase(); // QB // RB // WR // TE // K // DST
     db[position].findAll({}).then(function(results) {
       console.log(results);
-      res.render("partials/qb", {
+      res.render("partials/" + position, {
         layout: false,
         stat1: playerMap[position].stat1,
         stat2: playerMap[position].stat2,
