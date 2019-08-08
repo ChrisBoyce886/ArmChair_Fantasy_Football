@@ -5,12 +5,12 @@
 // var $exampleList = $("#example-list");
 
 var $qbBtn = $("#qb-btn");
-// var $rbBtn = $("#rb-btn");
-// var $wrBtn = $("#wr-btn");
-// var $wr2Btn = $("#wr2-btn");
-// var $teBtn = $("#te-btn");
-// var $kBtn = $("#k-btn");
-// var $defBtn = $("#def-btn");
+var $rbBtn = $("#rb-btn");
+var $wrBtn = $("#wr-btn");
+var $wr2Btn = $("#wr2-btn");
+var $teBtn = $("#te-btn");
+var $kBtn = $("#k-btn");
+var $defBtn = $("#def-btn");
 
 var $playerList = $("player-list");
 
@@ -28,7 +28,7 @@ var API = {
   },
   getTable: function() {
     return $.ajax({
-      url: "extra/table/QB",
+      url: "players/table/qb",
       type: "GET"
     });
   },
@@ -127,3 +127,9 @@ var refreshPlayers = function() {
 // $exampleList.on("click", ".delete", handleDeleteBtnClick);
 
 $qbBtn.on("click", refreshPlayers);
+$rbBtn.on("click", refreshPlayers);
+$wrBtn.on("click", refreshPlayers);
+$wr2Btn.on("click", refreshPlayers);
+$teBtn.on("click", refreshPlayers);
+$kBtn.on("click", refreshPlayers);
+$defBtn.on("click", refreshPlayers);

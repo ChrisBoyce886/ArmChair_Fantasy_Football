@@ -1,13 +1,19 @@
 module.exports = function(sequelize, DataTypes) {
-  var DST = sequelize.define("dst", {
-    rank: DataTypes.INT,
-    team: DataTypes.STRING,
-    tackles: DataTypes.INT,
-    sacks: DataTypes.INT,
-    interceptions: DataTypes.INT,
-    intTouchdowns: DataTypes.INT,
-    forcedFumbles: DataTypes.INT,
-    ffTouchdowns: DataTypes.INT
-  });
+  var DST = sequelize.define(
+    "DST",
+    {
+      rank: DataTypes.INTEGER,
+      team: DataTypes.STRING,
+      tackles: DataTypes.INTEGER,
+      sacks: DataTypes.INTEGER,
+      interceptions: DataTypes.INTEGER,
+      intTouchdowns: DataTypes.INTEGER,
+      forcedFumbles: DataTypes.INTEGER,
+      ffTouchdowns: DataTypes.INTEGER
+    },
+    {
+      timestamps: false
+    }
+  );
   return DST;
 };
