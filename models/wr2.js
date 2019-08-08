@@ -1,15 +1,21 @@
 module.exports = function(sequelize, DataTypes) {
-  var WR2 = sequelize.define("wr2", {
-    rank: DataTypes.INT,
-    name: DataTypes.STRING,
-    team: DataTypes.STRING,
-    position: DataTypes.STRING,
-    Receptions: DataTypes.INT,
-    receivingYards: DataTypes.INT,
-    receivingTouchdowns: DataTypes.INT,
-    yardsPerReception: DataTypes.DECIMAL,
-    receptionsPerGame: DataTypes.DECIMAL,
-    receivingYardsPerGame: DataTypes.DECIMAL
-  });
+  var WR2 = sequelize.define(
+    "WR2",
+    {
+      rank: DataTypes.INTEGER,
+      name: DataTypes.STRING,
+      team: DataTypes.STRING,
+      position: DataTypes.STRING,
+      Receptions: DataTypes.INTEGER,
+      receivingYards: DataTypes.INTEGER,
+      receivingTouchdowns: DataTypes.INTEGER,
+      yardsPerReception: DataTypes.DECIMAL,
+      receptionsPerGame: DataTypes.DECIMAL,
+      receivingYardsPerGame: DataTypes.DECIMAL
+    },
+    {
+      timestamps: false
+    }
+  );
   return WR2;
 };
