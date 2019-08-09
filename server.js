@@ -18,9 +18,9 @@ app.use(express.static("public"));
 // Handlebars
 app.engine(
   "handlebars",
-  exphbs({
-    partialsDir: path.join(__dirname, 'views/partials'),
-    defaultLayout: "main"    
+  exphbs({   
+    defaultLayout: "main",  
+     partialsDir: path.join(__dirname, 'views/partials'),  
   })
   
 );
