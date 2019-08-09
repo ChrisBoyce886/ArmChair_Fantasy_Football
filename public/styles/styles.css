@@ -1473,7 +1473,8 @@ thead>tr {
   margin: 0; 
   padding: 0; 
   position: fixed; 
-  right: 0; 
+  right: 0;
+  bottom: 60px; 
 }
 
 #messages li { 
