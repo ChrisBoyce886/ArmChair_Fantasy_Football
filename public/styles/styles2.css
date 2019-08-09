@@ -1,0 +1,41 @@
+.list-group-item {
+  line-height: 2.5;
+}
+
+@font-face {
+  font-family: 'nfl_minnesota_vikingsregular';
+  src: url('../styles/webfontkit/nfl_minnesota_vikings1-webfont.woff2') format('woff2'),
+       url('../styles/webfontkit/nfl_minnesota_vikings1-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-image: url("../pictures/field-background.jpg");
+  background-size:cover
+ }
+
+.container {
+  margin-top:3%
+}
+
+#mainHeader {
+  font-family: 'nfl_minnesota_vikingsregular';
+  text-align: center;
+  color: black !important;
+  font-size: 75px;
+  padding-top: 4.5%
+}
+
+ul li::before {
+  content: "\2022";  
+  color: red; 
+  font-weight: bold; 
+  display: inline-block; 
+  width: 1em;  
+}
+
+#enterButton {
+  color: white;
+  background-color: #E54A4F
+}

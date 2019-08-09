@@ -1,7 +1,74 @@
+body {
+  background-image: url("../pictures/field-background.jpg");
+  background-size: cover;
+}
+
+@font-face {
+  font-family: 'nfl_minnesota_vikingsregular';
+  src: url('../styles/webfontkit/nfl_minnesota_vikings1-webfont.woff2') format('woff2'),
+       url('../styles/webfontkit/nfl_minnesota_vikings1-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* .container {
+  position: relative;
+} */
+
+.main {
+  margin-top: 3%;
+  width:110%;
+  margin-left: -5%;
+  margin-bottom: 10%;
+}
+
 .choices {
   position: relative;
   margin-bottom: 24px;
   font-size: 16px
+}
+
+
+#mainHeader {
+  font-family: 'nfl_minnesota_vikingsregular';
+  text-align: center;
+  color: black !important;
+  font-size: 85px;
+  padding-top: 4.5%
+}
+
+ .btn-grp-wrap{    
+  display: flex; justify-content: center; 
+}
+
+
+#start-btn {
+  width: 50%;
+  text-align: center !important;
+  color: white;
+  background-color: rgb(11, 151, 11);
+  margin: 0 auto
+  
+}
+
+#viewRoster {
+  text-align: center
+ 
+}
+
+#airyards-table{
+  width: 125%;
+  margin:2.4% -2.5% 0% -2.5%;
+}
+
+#tableContainer{
+  padding: 0px !important;
+}
+
+#currentRoster {
+text-align: center;
+color: white;
+background-color: #E54A4F
 }
 
 .choices:focus {
@@ -1170,9 +1237,7 @@ a {
 }
 
 
-.footer a:visited {
-  color: #fff
-}
+
 
 .data-header {
   font-weight: 300;
@@ -1382,4 +1447,58 @@ thead>tr {
 
 .game-table table tbody tr:hover:nth-of-type(odd){
   background-color: #e6e6e6;
+}
+
+.footer a:visited {
+  color: #fff
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+}
+
+/* chat styling */
+#chat-container { 
+  width: 80%; 
+  height: 200px;  
+}
+
+#chat-form {
+  background: rgb(29, 29, 29); 
+  padding: 2px; 
+  position: fixed; 
+  left: 4.5%; 
+  bottom: 10px; 
+  width: 50%; 
+}
+
+#m { 
+  border: 0; 
+  padding: 10px; 
+  width: 90%; 
+  margin-right: .5%; 
+}
+
+#chat-btn { 
+  width: 9%; 
+  background: rgb(230, 41, 41); 
+  padding: 8px; 
+}
+
+#messages { 
+  list-style-type: none; 
+  margin: 0; 
+  padding: 0; 
+  position: fixed; 
+  right: 0; 
+}
+
+#messages li { 
+  padding: 5px 10px; 
+}
+
+#messages li:nth-child(odd) { 
+  background: #eee; 
 }

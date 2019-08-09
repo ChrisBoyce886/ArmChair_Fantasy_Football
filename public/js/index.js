@@ -1,99 +1,126 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
-var $exampleDescription = $("#example-description");
-var $submitBtn = $("#submit");
-var $exampleList = $("#example-list");
+var $qbBtn = $("#qb-btn");
+var $rbBtn = $("#rb-btn");
+var $wrBtn = $("#wr-btn");
+var $wr2Btn = $("#wr2-btn");
+var $teBtn = $("#te-btn");
+var $kBtn = $("#k-btn");
+var $defBtn = $("#def-btn");
 
-// The API object contains methods for each kind of request we'll make
-var API = {
-  saveExample: function(example) {
-    return $.ajax({
-      headers: {
-        "Content-Type": "application/json"
-      },
-      type: "POST",
-      url: "api/examples",
-      data: JSON.stringify(example)
-    });
-  },
-  getExamples: function() {
-    return $.ajax({
-      url: "api/examples",
-      type: "GET"
-    });
-  },
-  deleteExample: function(id) {
-    return $.ajax({
-      url: "api/examples/" + id,
-      type: "DELETE"
-    });
-  }
-};
-
-// refreshExamples gets new examples from the db and repopulates the list
-var refreshExamples = function() {
-  API.getExamples().then(function(data) {
-    var $examples = data.map(function(example) {
-      var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
-
-      var $li = $("<li>")
-        .attr({
-          class: "list-group-item",
-          "data-id": example.id
-        })
-        .append($a);
-
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
-
-      $li.append($button);
-
-      return $li;
-    });
-
-    $exampleList.empty();
-    $exampleList.append($examples);
+// Get functions for getting player data and displaying to html
+var getQBs = function() {
+  return $.ajax({
+    url: "players/table/qb",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
-// handleFormSubmit is called whenever we submit a new example
-// Save the new example to the db and refresh the list
-var handleFormSubmit = function(event) {
-  event.preventDefault();
-
-  var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
-  };
-
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
-    return;
-  }
-
-  API.saveExample(example).then(function() {
-    refreshExamples();
-  });
-
-  $exampleText.val("");
-  $exampleDescription.val("");
-};
-
-// handleDeleteBtnClick is called when an example's delete button is clicked
-// Remove the example from the db and refresh the list
-var handleDeleteBtnClick = function() {
-  var idToDelete = $(this)
-    .parent()
-    .attr("data-id");
-
-  API.deleteExample(idToDelete).then(function() {
-    refreshExamples();
+var getRBs = function() { 
+  return $.ajax({
+    url: "players/table/rb",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+    attachBtnHandler();
   });
 };
 
-// Add event listeners to the submit and delete buttons
-$submitBtn.on("click", handleFormSubmit);
-$exampleList.on("click", ".delete", handleDeleteBtnClick);
+var getWRs = function() {
+  return $.ajax({
+    url: "players/table/wr",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+    attachBtnHandler();
+  });
+};
+
+var getWR2s = function() {
+  return $.ajax({
+    url: "players/table/wr2",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+    attachBtnHandler();
+  });
+};
+
+var getTEs = function() {
+  return $.ajax({
+    url: "players/table/te",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+    attachBtnHandler();
+  });
+};
+
+var getKs = function() {
+  return $.ajax({
+    url: "players/table/k",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+    attachBtnHandler();
+  });
+};
+
+var getDEF = function() {
+  return $.ajax({
+    url: "players/table/dst",
+    type: "GET"
+  }).then(function(data) {
+    $("#tableContainer").html(data);
+    attachBtnHandler();
+  });
+};
+
+// Event listeners for position buttons
+$qbBtn.on("click", getQBs);
+$rbBtn.on("click", getRBs);
+$wrBtn.on("click", getWRs);
+$wr2Btn.on("click", getWR2s);
+$teBtn.on("click", getTEs);
+$kBtn.on("click", getKs);
+$defBtn.on("click", getDEF);
+
+// Add players to user's team
+
+function attachBtnHandler() {
+  var $addBtnList = $(".add-btn");
+  console.log($addBtnList);
+  $addBtnList.on("click", function(event) {
+    event.preventDefault();
+
+    var playerInfo = event.currentTarget.dataset;
+
+    console.log(playerInfo);
+
+    console.log("add button clicked");
+
+    $("#roster").append(
+      "<tr><td>" +
+        playerInfo.name +
+        "</td><td>" +
+        playerInfo.team +
+        "</td><td>" +
+        playerInfo.position +
+        "</td><td>" +
+        playerInfo.stat1 +
+        "</td><td>" +
+        playerInfo.stat2 +
+        "</td><td>" +
+        playerInfo.stat3 +
+        "</td><td>" +
+        playerInfo.stat4 +
+        "</td><td>" +
+        playerInfo.stat5 +
+        "</td><td>" +
+        playerInfo.stat6 +
+        "</td>"
+    );
+  });
+}
