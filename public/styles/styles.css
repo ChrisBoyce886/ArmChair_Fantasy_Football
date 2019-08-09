@@ -1492,7 +1492,7 @@ thead>tr {
 
 #chat-btn { 
   width: 9%; 
-  background: rgb(230, 41, 41); 
+  background: #E54A4F;
   padding: 8px; 
 }
 
@@ -1501,7 +1501,10 @@ thead>tr {
   margin: 0; 
   padding: 0; 
   position: fixed; 
-  right: 0; 
+  left: 6%; 
+  bottom: 40px;
+  background-color: white;
+  opacity: .9
 }
 
 #messages li { 
