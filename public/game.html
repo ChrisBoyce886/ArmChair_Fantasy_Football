@@ -91,88 +91,173 @@
                                   </tr>                               
                                 </thead>
 
+
                                 <tbody id="roster" class="striped">
           </tbody>
-        </table>
 
+                                <tbody id="player-list" class="striped">
+                                
+                                   <tr class="hover:bg-blue-light">                        
+                      
+                                      <td class="cursor-pointer select-none">                                        
+                                      </td>
+                                      <td class="text-left">                                     
+                                      </td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                    </tr>
+                                  
+
+
+                                    <tr class="hover:bg-blue-light">
+                                     
+                                      <td class="cursor-pointer select-none">
+                                      </td>
+                                      <td class="text-left">
+                                      </td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                    </tr>
+
+                                    <tr class="hover:bg-blue-light">
+                                    <td class="cursor-pointer select-none">                                        
+                                      </td>
+                                      <td class="text-left" data-value="Walker">                                      
+                                      </td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                      <td class="text-center"></td>
+                                    </tr>
+
+                                    <tr class="hover:bg-blue-light">
+                                      <td class="cursor-pointer select-none">                                        
+                                        </td>
+                                        <td class="text-left" data-value="Walker">                                      
+                                        </td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                        <td class="text-center"></td>
+                                      </tr>
+
+                                      <tr class="hover:bg-blue-light">
+                                        <td class="cursor-pointer select-none">                                        
+                                          </td>
+                                          <td class="text-left" data-value="Walker">                                      
+                                          </td>
+                                          <td class="text-center"></td>
+                                          <td class="text-center"></td>
+                                          <td class="text-center"></td>
+                                          <td class="text-center"></td>
+                                          <td class="text-center"></td>
+                                          <td class="text-center"></td>
+                                          <td class="text-center"></td>
+                                          <td class="text-center"></td>
+                                        </tr>
+
+                                        <tr class="hover:bg-blue-light">
+                                          <td class="cursor-pointer select-none">                                        
+                                            </td>
+                                            <td class="text-left" data-value="Walker">                                      
+                                            </td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                            <td class="text-center"></td>
+                                          </tr>
+
+                                          <tr class="hover:bg-blue-light">
+                                            <td class="cursor-pointer select-none">                                        
+                                              </td>
+                                              <td class="text-left" data-value="Walker">                                      
+                                              </td>
+                                              <td class="text-center"></td>
+                                              <td class="text-center"></td>
+                                              <td class="text-center"></td>
+                                              <td class="text-center"></td>
+                                              <td class="text-center"></td>
+                                              <td class="text-center"></td>
+                                              <td class="text-center"></td>
+                                              <td class="text-center"></td>
+                                            </tr>
+           </tbody>
+
+        </table>
       </div>
+           
       
-      
-      
-          </div>
+      </div>
         </div>
         <div class="footer">
           <div class="timer-clock"></div>
-          
+         
           <!-- Chat box -->
-          <div class="chat-container"> 
-            <ul id="messages"></ul>
-            <form id="chat-form" action="">
-              <input id="m" autocomplete="off" /><button id="chat-btn">Send</button>
-            </form>
+          <div class="chat-container">
+              <ul id="messages"></ul>
+              <form id="chat-form" action="">
+                <input id="m" autocomplete="off" /><button id="chat-btn">Send</button>
+              </form>
+            </div>
           </div>
-        </div>
+
+        <!-- JQuery script -->
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+        <!-- Flipclock script -->
+        <script src="js/flipclock.min.js"></script>
+        <!-- Socket.io script -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
+        <!-- Chat script -->
+        <script src="js/chat.js"></script>
+        <!-- Index script -->
+        <script src="js/index.js"></script>
       
-        
-        
-        <style>
-        .footer {
-           position: fixed;
-           right: 0;
-           bottom: 0;
-        }
-        </style>
-        
-      <!-- JQuery script -->
-      <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-      <!-- Flipclock script -->
-      <script src="js/flipclock.min.js"></script>
-      <!-- Socket.io script -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-      <!-- Chat script -->
-      <script src="js/chat.js"></script>
-      <!-- Index script -->
-      <script src="js/index.js"></script>
 
-      <script>
+   <script>
 
-      var clock = $('.timer-clock').FlipClock(60, {
-        countdown: false,
-        clockFace: 'MinuteCounter'
-      });
-      </script>
-
-      <!-- ToolTip -->
-      <script>
-        //tippy('.tooltip')
-      </script>
-
- <script>
-      $("#start-btn").click(function (){  
+        $("#start-btn").click(function (){
           var clock = $('.timer-clock').FlipClock(240, {
-            countdown: true,
-            clockFace: 'MinuteCounter'
-      })
-          $("#start-btn").hide()
-      })
+              countdown: true,
+              clockFace: 'MinuteCounter'
+          })
+            $("#start-btn").hide()
+          });
 
-      $("#scrollBtn").click(function() {
-  $("html, body").animate({ scrollTop: 0 }, "slow");
-  return false;
-});
+        $("#scrollBtn").click(function() {
+          $("html, body").animate({ scrollTop: 0 }, "slow");
+            return false;
+        });
 
-$('#viewRoster2').click(function(){
-        $("html, body").animate({scrollTop:$(document).height()}, "slow");
-        return false;
-    });
-    
-  </script>
+        $('#viewRoster2').click(function(){
+          $("html, body").animate({scrollTop:$(document).height()}, "slow");
+            return false;
+      });
 
-      <!-- ToolTip -->
-      <!-- // <script>
-      //   tippy('.tooltip')
-      // </script> -->
+    </script>
 
-      </body>
-      </html>
-      
+</body>
+</html>
