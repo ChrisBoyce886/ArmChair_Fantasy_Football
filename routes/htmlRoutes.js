@@ -66,11 +66,11 @@ module.exports = function(app) {
   });
 
   // Get player data
-  app.get("/players/table/:position", function(req, res) {
+  app.get("players/table/:position", function(req, res) {
     var position = req.params.position.toUpperCase(); // QB // RB // WR // TE // K // DST
     db[position].findAll({}).then(function(results) {
       console.log(results);
-      res.render("partials/qb", {
+      res.render("partials/" + position, {
         layout: false,
         stat1: playerMap[position].stat1,
         stat2: playerMap[position].stat2,
