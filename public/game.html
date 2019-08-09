@@ -97,19 +97,19 @@
 
                                 <tbody id="player-list" class="striped">
                                 
-                                   <tr class="hover:bg-blue-light">                        
+                                   <!-- <tr class="hover:bg-blue-light" id="row1">                        
                       
-                                      <td class="cursor-pointer select-none">                                        
+                                      <td class="cursor-pointer select-none" id="playerName">                                        
                                       </td>
-                                      <td class="text-left">                                     
+                                      <td class="text-left" id="teamName">                                     
                                       </td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
+                                      <td class="text-center" id="position"></td>
+                                      <td class="text-center" id="stat1"></td>
+                                      <td class="text-center" id="stat2"></td>
+                                      <td class="text-center" id="stat3"></td>
+                                      <td class="text-center" id="stat4"></td>
+                                      <td class="text-center" id="stat5"></td>
+                                      <td class="text-center" id="stat6"></td>
                                       <td class="text-center"></td>
                                     </tr>
                                   
@@ -204,7 +204,7 @@
                                               <td class="text-center"></td>
                                               <td class="text-center"></td>
                                               <td class="text-center"></td>
-                                            </tr>
+                                            </tr> -->
            </tbody>
 
         </table>
@@ -242,11 +242,13 @@
    <script>
 
         $("#start-btn").click(function (){
-          var clock = $('.timer-clock').FlipClock(240, {
+          var clock = $('.timer-clock').FlipClock(300, {
               countdown: true,
               clockFace: 'MinuteCounter'
           })
-            $("#start-btn").hide()
+            $("#start-btn").hide();
+            $(".btn-grp-wrap").css("margin-top", "-2.5%");
+            getQBs();
           });
 
         $("#scrollBtn").click(function() {
