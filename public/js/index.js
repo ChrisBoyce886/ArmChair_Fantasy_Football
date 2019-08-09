@@ -109,17 +109,17 @@ function attachBtnHandler() {
         "</td><td>" +
         playerInfo.position +
         "</td><td>" +
-        playerInfo.yards +
+        playerInfo.stat1 +
         "</td><td>" +
-        playerInfo.touchdowns +
+        playerInfo.stat2 +
         "</td><td>" +
-        playerInfo.interceptions +
+        playerInfo.stat3 +
         "</td><td>" +
-        playerInfo.comp +
+        playerInfo.stat4 +
         "</td><td>" +
-        playerInfo.rushingYards +
+        playerInfo.stat5 +
         "</td><td>" +
-        playerInfo.rushingTouchdowns +
+        playerInfo.stat6 +
         "</td>"
     );
   });
