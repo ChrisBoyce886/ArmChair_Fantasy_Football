@@ -29,35 +29,41 @@ require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 // Socket.io
-var usernames = {};
+var players = {};
+var playerScore = 0;
 
 var rooms = ["room1", "room2", "room3"];
 
 io.sockets.on("connection", function(socket) {
   console.log("a user connected");
   // when the client emits 'addteam', this listens and executes
-  socket.on("addteam", function(username) {
-    // store the username in the socket session for this client
-    socket.username = username;
+  socket.on("addteam", function(teamName) {
+    // store the team name in the socket session for this client
+    socket.teamName = teamName;
     // store the room name in the socket session for this client
     socket.room = "room1";
-    // add the client's username to the global list
-    usernames[username] = username;
+    // add the client's team name to the global players list
+    players[teamName] = teamName;
     // send client to room 1
     socket.join("room1");
+    console.log(teamName + " has joined");
     // echo to client they've connected
-    socket.emit("updatechat", "SERVER", "you have connected to room1");
+    socket.emit(
+      "updatechat",
+      "SERVER",
+      "you have connected to the locker room"
+    );
     // echo to room 1 that a person has connected to their room
     socket.broadcast
       .to("room1")
-      .emit("updatechat", "SERVER", username + " has connected to this room");
+      .emit("updatechat", "SERVER", teamName + " has connected to this room");
     socket.emit("updaterooms", rooms, "room1");
   });
 
   // when the client emits 'sendchat', this listens and executes...
   socket.on("sendchat", function(msg) {
     // we tell the client to execute 'updatechat' with 2 parameters
-    io.sockets.in(socket.room).emit("updatechat", socket.username, msg);
+    io.sockets.in(socket.room).emit("updatechat", socket.teamName, msg);
   });
 
   // When the client emits 'startgame', this listens and executes...
@@ -67,14 +73,30 @@ io.sockets.on("connection", function(socket) {
     io.emit("starttimer", "test");
   });
 
+  // add a rank (points) to the client's score
+  // socket.on("addvalue", function(points) {
+  //   socket.points = points;
+  //   players[points] = playerScore;
+  //   console.log(playerScore);
+  // });
+
+  // Timer stops -> Game Over
+  socket.on("timerstop", function() {
+    io.emit("gameover");
+  });
+
+  socket.on("pass-score", function() {
+    console.log(totalScore);
+  });
+
   // when the user disconnects.. perform this
   socket.on("disconnect", function() {
     console.log("user disconnected");
 
     // remove the username from global usernames list
-    delete usernames[socket.username];
+    delete players[socket.teamName];
     // update list of users in chat, client-side
-    io.sockets.emit("updateusers", usernames);
+    io.sockets.emit("updateusers", players);
     // echo globally that this client has left
     socket.broadcast.emit(
       "updatechat",

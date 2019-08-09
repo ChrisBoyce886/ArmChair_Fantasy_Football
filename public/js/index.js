@@ -7,6 +7,9 @@ var $teBtn = $("#te-btn");
 var $kBtn = $("#k-btn");
 var $defBtn = $("#def-btn");
 
+var playerScoreArr = [];
+var totalScore = 0;
+
 // Get functions for getting player data and displaying to html
 var getQBs = function() {
   return $.ajax({
@@ -78,6 +81,18 @@ var getDEF = function() {
   });
 };
 
+var getTotalScore = function() {
+  for (var i in playerScoreArr) {
+    totalScore += playerScoreArr[i];
+  }
+
+  console.log(totalScore);
+};
+
+var displayGameover = function() {
+  window.location.assign("./gameover.html");
+};
+
 // Event listeners for position buttons
 $qbBtn.on("click", getQBs);
 $rbBtn.on("click", getRBs);
@@ -88,7 +103,6 @@ $kBtn.on("click", getKs);
 $defBtn.on("click", getDEF);
 
 // Add players to user's team
-
 function attachBtnHandler() {
   var $addBtnList = $(".add-btn");
   console.log($addBtnList);
@@ -97,9 +111,17 @@ function attachBtnHandler() {
 
     var playerInfo = event.currentTarget.dataset;
 
-    console.log(playerInfo);
-
     console.log("add button clicked");
+
+    console.log(playerInfo.rank);
+    // emit rank to player score
+    var rank = parseInt(playerInfo.rank);
+    console.log(typeof rank);
+    playerScoreArr.push(rank);
+    console.log(playerScoreArr);
+    // compare arrays to determine winner
+    // display roster to gameover.html
+    // display winner to gameover.html
 
     $("#roster").append(
       "<tr><td>" +
@@ -124,3 +146,63 @@ function attachBtnHandler() {
     );
   });
 }
+
+// SOCKET.IO
+$(function() {
+  var socket = io();
+
+  // on connection to server, ask for user's team name with an anonymous callback
+  socket.on("connect", function() {
+    // call the server-side function 'addteam' and send one parameter (value of prompt)
+    socket.emit("addteam", prompt("What's your team name?"));
+  });
+
+  $("#chat-form").submit(function(e) {
+    e.preventDefault(); // prevents page reloading
+
+    socket.emit("sendchat", $("#m").val());
+    $("#m").val("");
+    return false;
+  });
+
+  socket.on("updatechat", function(teamName, msg) {
+    $("#messages").append($("<li>").text(teamName + ": " + msg));
+  });
+});
+
+$(function() {
+  var socket = io();
+
+  // Start game button
+  $("#start-btn").click(function() {
+    console.log("start btn clicked");
+    socket.emit("startgame");
+  });
+
+  // Countdown clock starts
+  socket.on("starttimer", function() {
+    console.log("starttimer");
+    var timerValue = 60;
+    // eslint-disable-next-line
+    var clock = $(".timer-clock").FlipClock(timerValue, {
+      countdown: true,
+      clockFace: "MinuteCounter",
+      callbacks: {
+        stop: function() {
+          socket.emit("timerstop");
+        }
+      }
+    });
+    $("#start-btn").hide();
+  });
+
+  socket.on("gameover", function() {
+    getTotalScore();
+    socket.emit("pass-score", function(score) {
+      var score = totalScore;
+    });
+    alert("Time is up!");
+    // Display gameover.html to all clients
+    displayGameover();
+  });
+});
