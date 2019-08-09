@@ -1,6 +1,6 @@
-﻿Position_Rank,Name,Team,Position,Passing_Yards,Passing_Touchdowns,Interceptions,Completion_Percentage,Rushing_Yards,Rushing_Touchdowns
+Position_Rank,Name,Team,Position,Passing_Yards,Passing_Touchdowns,Interceptions,Completion_Percentage,Rushing_Yards,Rushing_Touchdowns
 3,Aaron Rodgers,GB,QB,4442,25,2,62.31,269,2
-5,Andrew Luck,IND,QB,5018,42,16,66.20,194,0
+5,Andrew Luck,IND,QB,5018,42,16,66.2,194,0
 25,Andy Dalton,CIN,QB,2566,21,11,61.92,99,0
 7,Baker Mayfield,CLE,QB,3725,27,14,63.79,131,0
 10,Ben Roethlisberger,PIT,QB,5129,34,16,66.96,98,3
@@ -8,7 +8,7 @@
 8,Carson Wentz,PHI,QB,3074,21,7,69.58,93,0
 31,Case Keenum,WAS,QB,3890,18,15,62.29,93,2
 11,Dak Prescott,DAL,QB,4376,24,9,67.34,337,8
-22,Derek Carr,OAK,QB,4049,19,10,68.90,47,1
+22,Derek Carr,OAK,QB,4049,19,10,68.9,47,1
 2,Deshaun Watson,HOU,QB,4190,25,10,66.98,557,4
 9,Drew Brees,NO,QB,4542,36,7,73.72,20,4
 26,Eli Manning,NYG,QB,4299,21,11,65.97,20,1
