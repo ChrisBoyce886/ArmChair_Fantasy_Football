@@ -24,28 +24,28 @@ module.exports = function(app) {
   });
 
   // Get all WR2s
-  app.get("/api/wr2", function(req, res) {
+  app.get("/api/WR2", function(req, res) {
     db.WR2.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // Get all TEs
-  app.get("/api/te", function(req, res) {
+  app.get("/api/TE", function(req, res) {
     db.TE.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // Get all Ks
-  app.get("/api/k", function(req, res) {
+  app.get("/api/K", function(req, res) {
     db.K.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // Get all DSTs
-  app.get("/api/dst", function(req, res) {
+  app.get("/api/DST", function(req, res) {
     db.DST.findAll({}).then(function(results) {
       res.json(results);
     });
