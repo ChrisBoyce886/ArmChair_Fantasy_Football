@@ -13,7 +13,7 @@ var getQBs = function() {
     url: "players/table/QB",
     type: "GET"
   }).then(function(data) {
-    $("#tableContainer").text(data);
+    $("#tableContainer").html(data);
     attachBtnHandler();
   });
 };
