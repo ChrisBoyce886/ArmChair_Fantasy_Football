@@ -245,12 +245,18 @@
           var clock = $('.timer-clock').FlipClock(300, {
               countdown: true,
               clockFace: 'MinuteCounter'
-          })
+          }) 
+         
+          // if(clock.getTime().time < 30){
+          //   $(".flip-clock-wrapper ul li a div div.inn").css("color", "#E54A4F")
+          //   clock.increment();
+
             $("#start-btn").hide();
             $(".btn-grp-wrap").css("margin-top", "-2.5%");
-            getQBs();
-          });
-
+            getQBs();           
+          }); 
+          
+           
         $("#scrollBtn").click(function() {
           $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;

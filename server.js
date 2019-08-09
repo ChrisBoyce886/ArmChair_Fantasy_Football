@@ -46,7 +46,7 @@ io.sockets.on("connection", function(socket) {
     // send client to room 1
     socket.join("room1");
     // echo to client they've connected
-    socket.emit("updatechat", "SERVER", "you have connected to room1");
+    socket.emit("updatechat", "SERVER", "You have connected to Locker Room 1");
     // echo to room 1 that a person has connected to their room
     socket.broadcast
       .to("room1")
@@ -58,6 +58,19 @@ io.sockets.on("connection", function(socket) {
   socket.on("sendchat", function(msg) {
     // we tell the client to execute 'updatechat' with 2 parameters
     io.sockets.in(socket.room).emit("updatechat", socket.username, msg);
+  });
+
+  socket.on('typing', () => {
+    socket.broadcast.emit('typing', {
+      username: socket.username
+    });
+  });
+
+  // when the client emits 'stop typing', we broadcast it to others
+  socket.on('stop typing', () => {
+    socket.broadcast.emit('stop typing', {
+      username: socket.username
+    });
   });
 
   // when the user disconnects.. perform this

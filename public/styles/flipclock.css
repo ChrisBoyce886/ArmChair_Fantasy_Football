@@ -212,10 +212,10 @@
   text-shadow: none; }
 
 .flip-clock-divider.minutes .flip-clock-label {
-  right: -70px; }
+  right: -65px; }
 
 .flip-clock-divider.seconds .flip-clock-label {
-  right: -70px; }
+  right: -65px; }
 
 .flip-clock-dot.top {
   top: 40px; }
