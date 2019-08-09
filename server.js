@@ -54,10 +54,17 @@ io.sockets.on("connection", function(socket) {
     socket.emit("updaterooms", rooms, "room1");
   });
 
-  // when the client emits 'sendchat', this listens and executes
+  // when the client emits 'sendchat', this listens and executes...
   socket.on("sendchat", function(msg) {
     // we tell the client to execute 'updatechat' with 2 parameters
     io.sockets.in(socket.room).emit("updatechat", socket.username, msg);
+  });
+
+  // When the client emits 'startgame', this listens and executes...
+  socket.on("startgame", function() {
+    console.log("------ GAME STARTED -----");
+    // tell client to execute 'starttimer'
+    io.emit("starttimer", "test");
   });
 
   // when the user disconnects.. perform this

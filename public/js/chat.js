@@ -19,3 +19,22 @@ $(function() {
     $("#messages").append($("<li>").text(username + ": " + msg));
   });
 });
+
+$(function() {
+  var socket = io();
+
+  $("#start-btn").click(function() {
+    console.log("start btn clicked");
+    socket.emit("startgame");
+  });
+
+  socket.on("starttimer", function() {
+    console.log('starttimer');
+    // eslint-disable-next-line
+    var clock = $('.timer-clock').FlipClock(240, {
+      countdown: true,
+      clockFace: "MinuteCounter"
+    });
+    $("#start-btn").hide();
+  });
+});
