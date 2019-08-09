@@ -3,10 +3,23 @@ body {
   background-size: cover;
 }
 
+@font-face {
+  font-family: 'nfl_minnesota_vikingsregular';
+  src: url('../styles/webfontkit/nfl_minnesota_vikings1-webfont.woff2') format('woff2'),
+       url('../styles/webfontkit/nfl_minnesota_vikings1-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* .container {
+  position: relative;
+} */
+
 .main {
   margin-top: 3%;
   width:110%;
-  margin-left: -5%
+  margin-left: -5%;
+  margin-bottom: 10%;
 }
 
 .choices {
@@ -17,8 +30,11 @@ body {
 
 
 #mainHeader {
+  font-family: 'nfl_minnesota_vikingsregular';
   text-align: center;
-  padding-top: 1.5%
+  color: black !important;
+  font-size: 85px;
+  padding-top: 4.5%
 }
 
  .btn-grp-wrap{    
@@ -27,9 +43,12 @@ body {
 
 
 #start-btn {
+  width: 50%;
   text-align: center !important;
   color: white;
-  background-color: rgb(53, 184, 53);
+  background-color: rgb(11, 151, 11);
+  margin: 0 auto
+  
 }
 
 #viewRoster {
@@ -1437,7 +1456,7 @@ thead>tr {
 .footer {
   position: fixed;
   bottom: 0;
-  left: 0;
+  right: 0;
 }
 
 /* chat styling */
@@ -1450,8 +1469,8 @@ thead>tr {
   background: rgb(29, 29, 29); 
   padding: 2px; 
   position: fixed; 
-  right: 0; 
-  bottom: 15px; 
+  left: 4.5%; 
+  bottom: 10px; 
   width: 50%; 
 }
 
