@@ -19,13 +19,29 @@
         <td class="text-left">{{this.name}}</td>
         <td class="text-center">{{this.team}}</td>
         <td class="text-center">{{this.position}}</td>
-        <td class="text-center">{{this.comp}}</td>
         <td class="text-center">{{this.yards}}</td>
         <td class="text-center">{{this.touchdowns}}</td>
         <td class="text-center">{{this.interceptions}}</td>
+        <td class="text-center">{{this.comp}}</td>
         <td class="text-center">{{this.rushingYards}}</td>
         <td class="text-center">{{this.rushingTouchdowns}}</td>
-        <td class="text-center"><button id="add-btn">Add</button></td>
+        <td class="text-center" >
+          <button 
+            class="add-btn"
+            data-index={{@index}}
+            data-name={{this.name}}
+            data-team={{this.team}}
+            data-position={{this.position}}
+            data-stat1={{this.yards}}
+            data-stat2={{this.touchdowns}}
+            data-stat3={{this.interceptions}}
+            data-stat4={{this.comp}}
+            data-stat5={{this.rushingYards}}
+            data-stat6={{this.rushingTouchdowns}}
+          >
+            Add
+          </button>
+        </td>
       </tr>
     {{/each}}
   </tbody>

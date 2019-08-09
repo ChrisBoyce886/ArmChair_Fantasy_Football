@@ -25,7 +25,23 @@
         <td class="text-center">{{this.receptions}}</td>
         <td class="text-center">{{this.receivingYards}}</td>
         <td class="text-center">{{this.receivingTouchdowns}}</td>
-        <td class="text center"><button id="add-btn">Add</button></td>
+        <td class="text-center" >
+          <button 
+            class="add-btn"
+            data-index={{@index}}
+            data-name={{this.name}}
+            data-team={{this.team}}
+            data-position={{this.position}}
+            data-stat1={{this.rushingAttempts}}
+            data-stat2={{this.rushingYards}}
+            data-stat3={{this.rushingTouchdowns}}
+            data-stat4={{this.receptions}}
+            data-stat5={{this.receivingYards}}
+            data-stat6={{this.receivingTouchdowns}}
+          >
+            Add
+          </button>
+        </td>
       </tr>
     {{/each}}
   </tbody>
