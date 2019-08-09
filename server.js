@@ -20,7 +20,7 @@ app.engine(
   "handlebars",
   exphbs({
     defaultLayout: "main",
-    partialsDir: path.join(__dirname, 'views', 'partials')
+    // partialsDir: path.join(__dirname, 'views', 'partials')
   })
   
 );
