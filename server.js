@@ -19,8 +19,10 @@ app.use(express.static("public"));
 app.engine(
   "handlebars",
   exphbs({
-    defaultLayout: "main"
+    defaultLayout: "main",
+    partialsDir: path.join(__dirname, '..', 'views', 'partials')
   })
+  
 );
 app.set("view engine", "handlebars");
 

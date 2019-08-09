@@ -10,14 +10,14 @@ module.exports = function(app) {
   });
 
   // Get all RBs
-  app.get("/api/RB", function(req, res) {
+  app.get("/api/rb", function(req, res) {
     db.RB.findAll({}).then(function(results) {
       res.json(results);
     });
   });
 
   // Get all WRs
-  app.get("/api/WR", function(req, res) {
+  app.get("/api/wr", function(req, res) {
     db.WR.findAll({}).then(function(results) {
       res.json(results);
     });
