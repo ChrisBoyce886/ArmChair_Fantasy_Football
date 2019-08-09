@@ -24,11 +24,11 @@ module.exports = function(app) {
   });
 
   // Get all WR2s
-  app.get("/api/WR2", function(req, res) {
-    db.WR2.findAll({}).then(function(results) {
-      res.json(results);
-    });
-  });
+  // app.get("/api/wr2", function(req, res) {
+  //   db.WR2.findAll({}).then(function(results) {
+  //     res.json(results);
+  //   });
+  // });
 
   // Get all TEs
   app.get("/api/TE", function(req, res) {
