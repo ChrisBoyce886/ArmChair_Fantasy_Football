@@ -25,7 +25,23 @@
         <td class="text-center">{{this.epa}}</td>
         <td class="text-center">{{this.epm}}</td>
         <td class="text-center">{{this.epp}}</td>
-        <td class="text center"><button id="add-btn">Add</button></td>
+        <td class="text-center" >
+          <button 
+            class="add-btn"
+            data-index={{@index}}
+            data-name={{this.name}}
+            data-team={{this.team}}
+            data-position={{this.position}}
+            data-stat1={{this.fga}}
+            data-stat2={{this.fgm}}
+            data-stat3={{this.fgp}}
+            data-stat4={{this.epa}}
+            data-stat5={{this.epm}}
+            data-stat6={{this.epp}}
+          >
+            Add
+          </button>
+        </td>
       </tr>
     {{/each}}
   </tbody>
