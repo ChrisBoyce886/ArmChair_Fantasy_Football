@@ -10,7 +10,7 @@ var $defBtn = $("#def-btn");
 // Get functions for getting player data and displaying to html
 var getQBs = function() {
   return $.ajax({
-    url: "players/table/qb",
+    url: "players/table/QB",
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
