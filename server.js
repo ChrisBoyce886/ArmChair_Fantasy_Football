@@ -74,6 +74,16 @@ io.sockets.on("connection", function(socket) {
 
   // Timer stops -> Game Over
   socket.on("timerstop", function() {
+    // pull data from data base
+    // app.get("api/roster", function(req, res) {
+    //   console.log(res);
+    //   res.json({key: "value"});
+        // res.json(results);
+        // console.log(results);
+        // var data = JSON.parse(results);
+      // });
+    // parse and tally data
+    // io.emit("gameover", data);
     io.emit("gameover");
   });
 

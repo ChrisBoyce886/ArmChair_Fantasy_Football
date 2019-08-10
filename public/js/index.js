@@ -92,15 +92,15 @@ var postRoster = function(player) {
   });
 };
 
-var getRoster = function() {
-  console.log("getting roster...");
-  return $.ajax({
-    url: "/players/table/roster",
-    type: "GET"
-  }).then(function(data) {
-    $("#end-table").html(data);
-  });
-};
+// var getRoster = function() {
+//   console.log("getting roster...");
+//   return $.ajax({
+//     url: "api/roster",
+//     type: "GET"
+//   }).then(function(data) {
+//     $("#end-table").html(data);
+//   });
+// };
 
 var getTotalScore = function() {
   for (var i in playerScoreArr) {
@@ -225,7 +225,7 @@ $(function() {
   // Countdown clock starts
   socket.on("starttimer", function() {
     console.log("starttimer");
-    var timerValue = 5;
+    var timerValue = 20;
     // eslint-disable-next-line
     var clock = $(".timer-clock").FlipClock(timerValue, {
       countdown: true,
@@ -243,7 +243,6 @@ $(function() {
 
   socket.on("gameover", function() {
     getTotalScore();
-    getRoster();
     alert("Time is up!");
     // Display gameover.html to all clients
     displayGameover();
