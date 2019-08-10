@@ -81,6 +81,26 @@ var getDEF = function() {
   });
 };
 
+var postRoster = function(player) {
+  return $.ajax({
+    headers: {
+      "Content-Type": "application/json"
+    },
+    type: "POST",
+    url: "api/roster",
+    data: JSON.stringify(player)
+  });
+};
+
+var getRoster = function() {
+  return $.ajax({
+    url: "api/roster",
+    type: "GET"
+  }).then(function(data) {
+    $("#end-table").html(data);
+  });
+};
+
 var getTotalScore = function() {
   for (var i in playerScoreArr) {
     totalScore += playerScoreArr[i];
@@ -112,6 +132,8 @@ function attachBtnHandler() {
     var playerInfo = event.currentTarget.dataset;
 
     console.log("add button clicked");
+
+    postRoster(playerInfo);
 
     console.log(playerInfo.rank);
     // emit rank to player score
@@ -182,7 +204,7 @@ $(function() {
   // Countdown clock starts
   socket.on("starttimer", function() {
     console.log("starttimer");
-    var timerValue = 60;
+    var timerValue = 30;
     // eslint-disable-next-line
     var clock = $(".timer-clock").FlipClock(timerValue, {
       countdown: true,
@@ -199,6 +221,7 @@ $(function() {
 
   socket.on("gameover", function() {
     getTotalScore();
+    getRoster();
     alert("Time is up!");
     // Display gameover.html to all clients
     displayGameover();

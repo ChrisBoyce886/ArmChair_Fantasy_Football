@@ -28,6 +28,15 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
+app.get("/api/roster", function(req, res) {
+  db.Roster.findAll({}).then(function(results) {
+    res.render("partials/roster", {
+      layout: false,
+      players: results
+    });
+  });
+});
+
 // Socket.io
 var players = {};
 var playerScore = 0;
