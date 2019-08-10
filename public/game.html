@@ -232,40 +232,14 @@
         <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
         <!-- Flipclock script -->
         <script src="js/flipclock.min.js"></script>
-        <!-- Socket.io script -->
+        <!-- Socket.io CDN script -->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.dev.js"></script>
-        <!-- Chat script -->
-        <script src="js/chat.js"></script>
         <!-- Index script -->
         <script src="js/index.js"></script>
       
 
    <script>
 
-//       $(function() {
-
-// // initial sort set using sortList option
-//       $(".table1").tablesorter({
-//   // sort on the first column and second column in ascending order
-//       sortList: [[0,0],[1,0]]
-// });
-
-        $("#start-btn").click(function (){
-          var clock = $('.timer-clock').FlipClock(300, {
-              countdown: true,
-              clockFace: 'MinuteCounter'
-          }) 
-         
-          // if(clock.getTime().time < 30){
-          //   $(".flip-clock-wrapper ul li a div div.inn").css("color", "#E54A4F")
-          //   clock.increment();
-
-            $("#start-btn").hide();
-            $(".btn-grp-wrap").css("margin-top", "-2.5%");
-            getQBs();           
-          }); 
-          
-           
         $("#scrollBtn").click(function() {
           $("html, body").animate({ scrollTop: 0 }, "slow");
             return false;
