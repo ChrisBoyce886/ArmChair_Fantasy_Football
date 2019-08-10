@@ -168,6 +168,31 @@ $(function() {
   socket.on("updatechat", function(teamName, msg) {
     $("#messages").append($("<li>").text(teamName + ": " + msg));
   });
+
+
+// const addChatTyping = (data) => {
+//   data.typing = true;
+//   data.message = 'is typing';
+//   addChatMessage(data);
+// }
+
+
+// socket.on('typing', (data) => {
+//   addChatTyping(data);
+// });
+
+
+// // Removes the visual chat typing message
+// const removeChatTyping = (data) => {
+//   getTypingMessages(data).fadeOut(function () {
+//     $(this).remove();
+//   });
+// }
+
+// // Whenever the server emits 'stop typing', kill the typing message
+// socket.on('stop typing', (data) => {
+//   removeChatTyping(data);
+// });
 });
 
 $(function() {
@@ -182,7 +207,7 @@ $(function() {
   // Countdown clock starts
   socket.on("starttimer", function() {
     console.log("starttimer");
-    var timerValue = 60;
+    var timerValue = 300;
     // eslint-disable-next-line
     var clock = $(".timer-clock").FlipClock(timerValue, {
       countdown: true,
