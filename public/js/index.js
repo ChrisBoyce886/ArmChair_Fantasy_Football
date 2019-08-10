@@ -225,7 +225,7 @@ $(function() {
   // Countdown clock starts
   socket.on("starttimer", function() {
     console.log("starttimer");
-    var timerValue = 20;
+    var timerValue = 240;
     // eslint-disable-next-line
     var clock = $(".timer-clock").FlipClock(timerValue, {
       countdown: true,
