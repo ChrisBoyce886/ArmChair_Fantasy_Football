@@ -195,6 +195,7 @@ $(function() {
     });
     $("#start-btn").hide();
     $(".btn-grp-wrap").css("margin-top", "-2.5%");
+    getQBs()
   });
 
   socket.on("gameover", function() {
