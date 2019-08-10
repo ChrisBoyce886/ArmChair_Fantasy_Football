@@ -50,4 +50,11 @@ module.exports = function(app) {
       res.json(results);
     });
   });
+
+  // Post to roster
+  app.post("/api/roster", function(req, res) {
+    db.Roster.create(req.body).then(function(result) {
+      res.json(result);
+    });
+  });
 };
