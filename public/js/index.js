@@ -93,8 +93,9 @@ var postRoster = function(player) {
 };
 
 var getRoster = function() {
+  console.log("getting roster...");
   return $.ajax({
-    url: "api/roster",
+    url: "/players/table/roster",
     type: "GET"
   }).then(function(data) {
     $("#end-table").html(data);
@@ -106,7 +107,7 @@ var getTotalScore = function() {
     totalScore += playerScoreArr[i];
   }
 
-  console.log(totalScore);
+  console.log("Total roster score: " + totalScore);
 };
 
 var displayGameover = function() {
@@ -136,14 +137,10 @@ function attachBtnHandler() {
     postRoster(playerInfo);
 
     console.log(playerInfo.rank);
-    // emit rank to player score
+    // Push rank to player score array
     var rank = parseInt(playerInfo.rank);
-    console.log(typeof rank);
     playerScoreArr.push(rank);
-    console.log(playerScoreArr);
-    // compare arrays to determine winner
-    // display roster to gameover.html
-    // display winner to gameover.html
+    console.log("Roster Scores: " + playerScoreArr);
 
     $("#roster").append(
       "<tr><td>" +
@@ -192,29 +189,28 @@ $(function() {
   });
 
 
-// const addChatTyping = (data) => {
-//   data.typing = true;
-//   data.message = 'is typing';
-//   addChatMessage(data);
-// }
+  const addChatTyping = (data) => {
+    data.typing = true;
+    data.message = 'is typing';
+    addChatMessage(data);
+  }
+
+  socket.on('typing', (data) => {
+    addChatTyping(data);
+  });
 
 
-// socket.on('typing', (data) => {
-//   addChatTyping(data);
-// });
+  // Removes the visual chat typing message
+  const removeChatTyping = (data) => {
+    getTypingMessages(data).fadeOut(function () {
+      $(this).remove();
+    });
+  }
 
-
-// // Removes the visual chat typing message
-// const removeChatTyping = (data) => {
-//   getTypingMessages(data).fadeOut(function () {
-//     $(this).remove();
-//   });
-// }
-
-// // Whenever the server emits 'stop typing', kill the typing message
-// socket.on('stop typing', (data) => {
-//   removeChatTyping(data);
-// });
+  // Whenever the server emits 'stop typing', kill the typing message
+  socket.on('stop typing', (data) => {
+    removeChatTyping(data);
+  });
 });
 
 $(function() {
@@ -229,7 +225,7 @@ $(function() {
   // Countdown clock starts
   socket.on("starttimer", function() {
     console.log("starttimer");
-    var timerValue = 300;
+    var timerValue = 5;
     // eslint-disable-next-line
     var clock = $(".timer-clock").FlipClock(timerValue, {
       countdown: true,

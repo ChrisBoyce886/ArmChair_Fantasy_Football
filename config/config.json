@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "08886",
+    "password": "password",
     "database": "fantasyStats",
     "port": 3306,
     "host": "localhost",
@@ -9,7 +9,7 @@
   },
   "test": {
     "username": "root",
-    "password": "08886",
+    "password": "password",
     "database": "fantasyStats",
     "port": 3306,
     "host": "localhost",

@@ -83,16 +83,6 @@ module.exports = function(app) {
     });
   });
 
-  // Get roster from api and render to gameover.html
-  app.get("/api/roster", function(req, res) {
-    db.Roster.findAll({}).then(function(results) {
-      res.render("partials/roster", {
-        layout: false,
-        players: results
-      });
-    });
-  });
-
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");

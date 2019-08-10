@@ -28,18 +28,8 @@ app.set("view engine", "handlebars");
 require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
-app.get("/api/roster", function(req, res) {
-  db.Roster.findAll({}).then(function(results) {
-    res.render("partials/roster", {
-      layout: false,
-      players: results
-    });
-  });
-});
-
 // Socket.io
 var players = {};
-var playerScore = 0;
 
 var rooms = ["room1", "room2", "room3"];
 
@@ -82,30 +72,23 @@ io.sockets.on("connection", function(socket) {
     io.emit("starttimer", "test");
   });
 
-  // add a rank (points) to the client's score
-  // socket.on("addvalue", function(points) {
-  //   socket.points = points;
-  //   players[points] = playerScore;
-  //   console.log(playerScore);
-  // });
-
   // Timer stops -> Game Over
   socket.on("timerstop", function() {
     io.emit("gameover");
   });
 
-  // socket.on('typing', () => {
-  //   socket.broadcast.emit('typing', {
-  //     username: socket.username
-  //   });
-  // });
+  socket.on('typing', () => {
+    socket.broadcast.emit('typing', {
+      username: socket.teamName
+    });
+  });
 
-  // // when the client emits 'stop typing', we broadcast it to others
-  // socket.on('stop typing', () => {
-  //   socket.broadcast.emit('stop typing', {
-  //     username: socket.username
-  //   });
-  // });
+  // when the client emits 'stop typing', we broadcast it to others
+  socket.on('stop typing', () => {
+    socket.broadcast.emit('stop typing', {
+      username: socket.teamName
+    });
+  });
 
   // when the user disconnects.. perform this
   socket.on("disconnect", function() {
