@@ -3,8 +3,9 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fantasy Football Draft - Team Redis</title>
-  
+  <title>(AFL) Armchair Fantasy League</title>
+  <link rel="shortcut icon" type="image/ico" href="/pictures/favicon.png"> <!--Favicon-->
+  <!-- <script type="text/javascript" src="/tablesorter-master.js"></script> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <!-- <link rel='stylesheet' href='https://d33wubrfki0l68.cloudfront.net/css/eb806b3c30e0754650136bd1f683106530fcf9e6/css/site.css'/> -->
   <link rel="stylesheet" href="styles/styles.css">
@@ -31,7 +32,7 @@
 
 
       <div class="bg-texture-red">
-        <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow" id="mainHeader">Dope Ass Fantasy Football Draft</h1>
+        <h1 class="text-white font-bold tracking-wide text-6xl px-8 pb-4 pt-8 text-shadow" id="mainHeader">Armchair Fantasy League (AFL)</h1>
       <button type="button" class="btn btn-secondary btn-lg btn-block" id="start-btn">Click Here To Start Draft</button>
         <div class="round-data">
           <div class="px-8">
@@ -76,7 +77,7 @@
           
                             <div class="data-container flex" id="tableContainer">       
                               <table id="airyards-table" class="w-full rounded-lg" data-sortable>
-                                <thead>
+                                <thead data-sortlist="[[0,0],[2,0]]">
                                   <tr class="text-xs text-white rounded-lg subpixel-antialiased cursor-pointer">
                                     <th class="text-left data-header">Player</th>
                                     <th class="data-header">Team Name</th>
@@ -97,19 +98,19 @@
 
                                 <tbody id="player-list" class="striped">
                                 
-                                   <tr class="hover:bg-blue-light">                        
+                                   <!-- <tr class="hover:bg-blue-light" id="row1">                        
                       
-                                      <td class="cursor-pointer select-none">                                        
+                                      <td class="cursor-pointer select-none" id="playerName">                                        
                                       </td>
-                                      <td class="text-left">                                     
+                                      <td class="text-left" id="teamName">                                     
                                       </td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
-                                      <td class="text-center"></td>
+                                      <td class="text-center" id="position"></td>
+                                      <td class="text-center" id="stat1"></td>
+                                      <td class="text-center" id="stat2"></td>
+                                      <td class="text-center" id="stat3"></td>
+                                      <td class="text-center" id="stat4"></td>
+                                      <td class="text-center" id="stat5"></td>
+                                      <td class="text-center" id="stat6"></td>
                                       <td class="text-center"></td>
                                     </tr>
                                   
@@ -204,23 +205,25 @@
                                               <td class="text-center"></td>
                                               <td class="text-center"></td>
                                               <td class="text-center"></td>
-                                            </tr>
+                                            </tr> -->
            </tbody>
 
         </table>
       </div>
            
-      
+   
       </div>
+      
         </div>
+        
         <div class="footer">
           <div class="timer-clock"></div>
-         
+        
           <!-- Chat box -->
           <div class="chat-container">
               <ul id="messages"></ul>
-              <form id="chat-form" action="">
-                <input id="m" autocomplete="off" /><button id="chat-btn">Send</button>
+              <form id="chat-form"  action="">
+                <input id="m" placeholder="How good of a Smack Talker are you?" autocomplete="off" /><button id="chat-btn">Send</button>
               </form>
             </div>
           </div>

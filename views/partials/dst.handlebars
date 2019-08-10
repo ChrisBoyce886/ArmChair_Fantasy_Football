@@ -25,7 +25,24 @@
         <td class="text-center">{{this.intTouchdowns}}</td>
         <td class="text-center">{{this.forcedFumbles}}</td>
         <td class="text-center">{{this.ffTouchdowns}}</td>
-        <td class="text center"><button id="add-btn">Add</button></td>
+       <td class="text-center" >
+          <button 
+            class="add-btn"
+            data-index={{@index}}
+            data-rank={{this.rank}}
+            data-name={{this.name}}
+            data-team={{this.team}}
+            data-position={{this.position}}
+            data-stat1={{this.tackles}}
+            data-stat2={{this.sacks}}
+            data-stat3={{this.interceptions}}
+            data-stat4={{this.intTouchdowns}}
+            data-stat5={{this.forcedFumbles}}
+            data-stat6={{this.ffTouchdowns}}
+          >
+            Add
+          </button>
+        </td>
       </tr>
     {{/each}}
   </tbody>

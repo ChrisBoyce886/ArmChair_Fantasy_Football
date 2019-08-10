@@ -13,7 +13,7 @@ var totalScore = 0;
 // Get functions for getting player data and displaying to html
 var getQBs = function() {
   return $.ajax({
-    url: "players/table/qb",
+    url: "players/table/QB",
     type: "GET"
   }).then(function(data) {
     $("#tableContainer").html(data);
@@ -194,13 +194,11 @@ $(function() {
       }
     });
     $("#start-btn").hide();
+    $(".btn-grp-wrap").css("margin-top", "-2.5%");
   });
 
   socket.on("gameover", function() {
     getTotalScore();
-    socket.emit("pass-score", function(score) {
-      var score = totalScore;
-    });
     alert("Time is up!");
     // Display gameover.html to all clients
     displayGameover();

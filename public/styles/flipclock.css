@@ -205,13 +205,17 @@
   top: -1.5em;
   right: -86px;
   color: black;
+  font-size: 120%;
+  padding: 4px;
+  background-color: #E54A4F;
+  border-radius: 5px;
   text-shadow: none; }
 
 .flip-clock-divider.minutes .flip-clock-label {
-  right: -70px; }
+  right: -65px; }
 
 .flip-clock-divider.seconds .flip-clock-label {
-  right: -70px; }
+  right: -65px; }
 
 .flip-clock-dot.top {
   top: 40px; }

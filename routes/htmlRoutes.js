@@ -62,7 +62,7 @@ var playerMap = {
 module.exports = function(app) {
   // Load index page
   app.get("/", function(req, res) {
-    res.sendFile(__dirname, "./index.html");
+    res.sendFile(__dirname, "../index.html");
   });
 
   // Get player data
