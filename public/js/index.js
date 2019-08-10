@@ -190,6 +190,31 @@ $(function() {
   socket.on("updatechat", function(teamName, msg) {
     $("#messages").append($("<li>").text(teamName + ": " + msg));
   });
+
+
+// const addChatTyping = (data) => {
+//   data.typing = true;
+//   data.message = 'is typing';
+//   addChatMessage(data);
+// }
+
+
+// socket.on('typing', (data) => {
+//   addChatTyping(data);
+// });
+
+
+// // Removes the visual chat typing message
+// const removeChatTyping = (data) => {
+//   getTypingMessages(data).fadeOut(function () {
+//     $(this).remove();
+//   });
+// }
+
+// // Whenever the server emits 'stop typing', kill the typing message
+// socket.on('stop typing', (data) => {
+//   removeChatTyping(data);
+// });
 });
 
 $(function() {
@@ -204,7 +229,7 @@ $(function() {
   // Countdown clock starts
   socket.on("starttimer", function() {
     console.log("starttimer");
-    var timerValue = 30;
+    var timerValue = 300;
     // eslint-disable-next-line
     var clock = $(".timer-clock").FlipClock(timerValue, {
       countdown: true,
@@ -217,6 +242,7 @@ $(function() {
     });
     $("#start-btn").hide();
     $(".btn-grp-wrap").css("margin-top", "-2.5%");
+    getQBs();
   });
 
   socket.on("gameover", function() {

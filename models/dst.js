@@ -3,7 +3,9 @@ module.exports = function(sequelize, DataTypes) {
     "DST",
     {
       rank: DataTypes.INTEGER,
+      // name: DataTypes.STRING,
       team: DataTypes.STRING,
+      // position: DataTypes.STRING,
       tackles: DataTypes.INTEGER,
       sacks: DataTypes.INTEGER,
       interceptions: DataTypes.INTEGER,
