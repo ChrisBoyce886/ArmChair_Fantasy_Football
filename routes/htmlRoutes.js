@@ -1,7 +1,7 @@
 var db = require("../models");
 
 var playerMap = {
-  QB: {
+  qb: {
     stat1: "Passing Yards",
     stat2: "Passing Touchdowns",
     stat3: "Interceptions",
@@ -9,7 +9,7 @@ var playerMap = {
     stat5: "Rushing Yards",
     stat6: "Rushing Touchdowns"
   },
-  RB: {
+  rb: {
     stat1: "Rushing Attempts",
     stat2: "Rushing Yards",
     stat3: "Rushing Touchdowns",
@@ -17,7 +17,7 @@ var playerMap = {
     stat5: "Receiving Yards",
     stat6: "Receiving Touchdowns"
   },
-  WR: {
+  wr: {
     stat1: "Receptions",
     stat2: "Receiving Yards",
     stat3: "Receiving Touchdowns",
@@ -25,7 +25,7 @@ var playerMap = {
     stat5: "Receptions Per Game",
     stat6: "Receiving Yards Per Game"
   },
-  WR2: {
+  wr2: {
     stat1: "Receptions",
     stat2: "Receiving Yards",
     stat3: "Receiving Touchdowns",
@@ -33,7 +33,7 @@ var playerMap = {
     stat5: "Receptions Per Game",
     stat6: "Receiving Yards Per Game"
   },
-  TE: {
+  te: {
     stat1: "Receptions",
     stat2: "Receiving Yards",
     stat3: "Receiving Touchdowns",
@@ -41,7 +41,7 @@ var playerMap = {
     stat5: "Receptions Per Game",
     stat6: "Receiving Yards Per Game"
   },
-  K: {
+  k: {
     stat1: "Field Goal Attempts",
     stat2: "Field Goals Made",
     stat3: "Field Goal Percentage",
@@ -49,7 +49,7 @@ var playerMap = {
     stat5: "Extra Points Made",
     stat6: "Extra Points Percentage"
   },
-  DST: {
+  dst: {
     stat1: "Tackles",
     stat2: "Sacks",
     stat3: "Interceptions",

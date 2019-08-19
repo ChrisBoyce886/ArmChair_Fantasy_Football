@@ -189,28 +189,28 @@ $(function() {
   });
 
 
-  const addChatTyping = (data) => {
-    data.typing = true;
-    data.message = 'is typing';
-    addChatMessage(data);
-  }
+  // const addChatTyping = (data) => {
+  //   data.typing = true;
+  //   data.message = 'is typing';
+  //   addChatMessage(data);
+  // }
 
-  socket.on('typing', (data) => {
-    addChatTyping(data);
-  });
+  // socket.on('typing', (data) => {
+  //   addChatTyping(data);
+  // });
 
 
-  // Removes the visual chat typing message
-  const removeChatTyping = (data) => {
-    getTypingMessages(data).fadeOut(function () {
-      $(this).remove();
-    });
-  }
+  // // Removes the visual chat typing message
+  // const removeChatTyping = (data) => {
+  //   getTypingMessages(data).fadeOut(function () {
+  //     $(this).remove();
+  //   });
+  // }
 
-  // Whenever the server emits 'stop typing', kill the typing message
-  socket.on('stop typing', (data) => {
-    removeChatTyping(data);
-  });
+  // // Whenever the server emits 'stop typing', kill the typing message
+  // socket.on('stop typing', (data) => {
+  //   removeChatTyping(data);
+  // });
 });
 
 $(function() {
